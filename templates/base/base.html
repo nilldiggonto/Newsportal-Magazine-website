@@ -1,0 +1,1303 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Carrier</title>
+
+    <!--===========================================-->
+    <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.css">
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css".css"> -->
+    <!--===========================================-->
+
+
+    <!--==========CUSTOM SYTLE===============-->
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+    <style>
+        .bg-one{
+            background-color: rgb(4, 38, 54);
+        }
+
+        /* .navbar-nav .dropdown-menu {
+            position: static !important;
+        } */
+
+
+        
+    </style>
+
+    <!--=========================================-->
+
+</head>
+<body>
+
+    <!--UPPER HEAD-->
+    <div class="p-3 bg-one text-white mt-5 d-none d-md-block">
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <div>
+                    <span>Benapole Jessore</span>
+                </div>
+    
+                <div>
+                    <a href="#">fb</a>
+                    <a href="#">fb</a>
+                    <a href="#">fb</a>
+    
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!---====================================-->
+    <div class="container d-md-none mb-5" >
+        <!--for mobile-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary  fixed-top" >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Separated link</a>
+                </div>
+              </li>
+            </ul>
+          
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--======-->
+    <div id="brand" >
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12 mt-4 mb-2">
+                    <h4><span class="text-primary"><b>BENAPOLE</b></span>ROCKS</h4>
+                </div>
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="bg-dark" style="width: 728px; height: 90px;">
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---==========-->
+
+    
+
+    <!--==================================-->
+
+    <div id="navigation" class="bg-one d-none d-md-block">
+        <div class="container mt-2">
+            
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">BenapoleRocks</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="main_nav">
+                        <ul class="navbar-nav ms-auto">
+
+                            <li class="nav-item dropdown has-megamenu">
+                                <a class="nav-link dropdown-toggle show" href="#" data-bs-toggle="dropdown">Education</a>
+                                <div class="dropdown-menu megamenu show" role="menu">
+
+
+                                    <div class="d-flex align-items-start ">
+                                        <div style="width: 20%;" class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                          <button  class="nav-link text-dark active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+                                          <button class="nav-link text-dark" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+                                          <button class="nav-link text-dark" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+                                          <button class="nav-link text-dark" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+                                        </div>
+                                        <div class="tab-content" id="v-pills-tabContent" style="width: 100%;">
+                                          <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                             <div class="row">
+                                                 <div class="col-3">
+                                                     <div class="card">
+                                                         <!-- <div class="card-header">
+                                                             <h4>TITLE</h4>
+                                                         </div> -->
+                                                         <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1554048109-2b3c9a6d877b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="">
+                                                         <div class="card-body">
+                                                             <p><b>Lorem, ipsum dolor.</b></p>
+                                                             <!-- <br> -->
+                                                             <span>Entertainment July 8</span>
+                                                         </div>
+                                                     </div>
+                                                 </div>
+
+                                                 <div class="col-3">
+                                                    <div class="card">
+                                                        <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1554048109-2b3c9a6d877b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="">
+                                                        <div class="card-body">
+                                                            <p><b>Lorem, ipsum dolor.</b></p>
+                                                            <!-- <br> -->
+                                                            <span>Entertainment July 8</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <div class="card">
+                                                        <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1554048109-2b3c9a6d877b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="">
+                                                        <div class="card-body">
+                                                            <p><b>Lorem, ipsum dolor.</b></p>
+                                                            <!-- <br> -->
+                                                            <span>Entertainment July 8</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-3">
+                                                    <div class="card">
+                                                        <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1554048109-2b3c9a6d877b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=667&q=80" alt="">
+                                                         <div class="card-body">
+                                                             <p><b>Lorem, ipsum dolor.</b></p>
+                                                             <!-- <br> -->
+                                                             <span>Entertainment July 8</span>
+                                                         </div>
+                                                    </div>
+                                                </div>
+
+                                             </div>
+                                          </div>
+                                          <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                                          <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                                          <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                                        </div>
+                                      </div>
+                             
+                                   
+                                </div> 
+                            </li>
+
+                            <li class="nav-item dropdown has-megamenu">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Jobs</a>
+                                <div class="dropdown-menu megamenu" role="menu">
+                                   <div class="row">
+                                       <div class="col-4">
+                                        <h4>category</h4>
+                                       </div>
+                                       <div class="col-8">
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+
+                                       </div>
+                                   </div>
+                                </div> 
+                            </li>
+
+                            <li class="nav-item dropdown has-megamenu">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Life Style</a>
+                                <div class="dropdown-menu megamenu" role="menu">
+                                   <div class="row">
+                                       <div class="col-4">
+                                        <h4>category</h4>
+                                       </div>
+                                       <div class="col-8">
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+
+                                       </div>
+                                   </div>
+                                </div> 
+                            </li>
+
+
+                            <li class="nav-item dropdown has-megamenu">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Entertainment</a>
+                                <div class="dropdown-menu megamenu" role="menu">
+                                   <div class="row">
+                                       <div class="col-4">
+                                        <h4>category</h4>
+                                       </div>
+                                       <div class="col-8">
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+
+                                       </div>
+                                   </div>
+                                </div> 
+                            </li>
+
+
+                            <li class="nav-item dropdown has-megamenu">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">News</a>
+                                <div class="dropdown-menu megamenu" role="menu">
+                                   <div class="row">
+                                       <div class="col-4">
+                                        <h4>category</h4>
+                                       </div>
+                                       <div class="col-8">
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+
+                                       </div>
+                                   </div>
+                                </div> 
+                            </li>
+                       
+                            <li class="nav-item dropdown has-megamenu">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Education</a>
+                                <div class="dropdown-menu megamenu" role="menu">
+                                   <div class="row">
+                                       <div class="col-4">
+                                        <h4>category</h4>
+                                       </div>
+                                       <div class="col-8">
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+                                           <h4>one</h4>
+
+                                       </div>
+                                   </div>
+                                </div> 
+                            </li>
+                        </ul>
+                        <!-- <ul class="navbar-nav ms-auto">
+                            <li class="nav-item"><a class="nav-link" href="#"> Menu item </a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link  dropdown-toggle" href="#" data-bs-toggle="dropdown"> Dropdown right </a>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li><a class="dropdown-item" href="#"> Submenu item 1</a></li>
+                                  <li><a class="dropdown-item" href="#"> Submenu item 2 </a></li>
+                                </ul>
+                            </li>
+                        </ul> -->
+                    </div> <!-- navbar-collapse.// -->
+                </div> <!-- container-fluid.// -->
+                </nav>
+        </div>
+    </div>
+
+
+
+    <!--======================================-->
+
+
+    <!--===============BREAKING NEWS ===============-->
+
+    <div id="trend"  >
+        <div class="container mt-2">
+           <div class="row">
+            <div class="col-md-9 col-12">
+                <div class="onoffswitch3">
+                    <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
+                    <label class="onoffswitch3-label" for="myonoffswitch3">
+                        <span class="onoffswitch3-inner">
+                            <span class="onoffswitch3-active">
+                                <marquee class="scroll-text">
+                                   <a href="https://google.com"> Avengers: Infinity War's Iron Spider Suit May Use Bleeding Edge Tech </a>
+                                     <span class="glyphicon glyphicon-forward"></span> 
+                                     Russo brothers ask for fans not to spoil Avengers: Infinity War 
+                                     <span class="glyphicon glyphicon-forward"></span> 
+                                      Bucky's Arm Miraculously Regenerates On Avengers: Infinity War Poster
+                                    </marquee>
+                                <span class="onoffswitch3-switch"><i class="uil uil-fire"></i> HOT CONTENT</span>
+                            </span>
+                            <div class="d-md-none d-block mt-1">
+                                <br>
+                            </div>
+                            <span class="onoffswitch3-inactive"><span class="onoffswitch3-switch">SHOW BREAKING NEWS</span></span>
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-12">
+                <form id="searchBtn" class="d-flex" style="border: 1px solid rgb(0, 73, 107); border-radius: 5px; height: 28px;">
+                    <input id="search" class="form-control " type="text" placeholder="Search" style="border: none;">
+                    <button class="btn " type="submit" style="padding: 0 2px 0 0;">
+                        <i class="uil uil-search"></i>
+                    </button>
+                  </form>
+            </div>
+           </div>
+        </div>
+    </div>
+
+    <!--============ Feature CONTENT ======================-->
+    <div id="feature" class="d-none d-md-block">
+        <div class="container mt-4">
+            <div class="row g-1">
+                <content class="col-md-6">
+    
+                    <figure>
+                        <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                        <h4 class="p-2">Business</h4>
+                        <div class="overlay">
+                            <div class="description">
+                                <a href="" style="text-decoration: none; color: aliceblue;">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, saepe?</p>
+                                    <p>Time 25March</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+            
+                </content>
+
+              <div class="col-md-6">
+                  <div class="row g-1">
+                    <content class="col-md-6">
+    
+                        <figure>
+                            <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                            <h4>Business</h4>
+                            <div class="overlay">
+                                <div class="description">
+                                    <a href="">
+                                        all about business
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                
+                    </content>
+    
+                    <content class="col-md-6">
+        
+                        <figure>
+                            <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                            <h4>Business</h4>
+                            <div class="overlay">
+                                <div class="description">
+                                    <a href="">
+                                        all about business
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                
+                    </content>
+                    <content class="col-md-6">
+        
+                        <figure>
+                            <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                            <h4>Business</h4>
+                            <div class="overlay">
+                                <div class="description">
+                                    <a href="">
+                                        all about business
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                
+                    </content>
+                    <content class="col-md-6">
+        
+                        <figure>
+                            <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                            <h4>Business</h4>
+                            <div class="overlay">
+                                <div class="description">
+                                    <a href="">
+                                        all about business
+                                    </a>
+                                </div>
+                            </div>
+                        </figure>
+                
+                    </content>
+                  </div>
+              </div>
+
+                
+
+                <!-- <aside class="col-md-4 col-lg-4 col-sm-4">
+    
+                    <figure>
+                        <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                        <h4>Games</h4>
+                        <div class="overlay">
+                            <div class="description">
+                                All About games
+                            </div>
+                        </div>
+                    </figure>
+            
+                </aside> -->
+            </div>
+        </div>
+    </div>
+
+
+    <!--==================== LATEST ARTICLE =======================-->
+    <div id="latest-article" class="d-none d-md-block" >
+        <div class="container mt-4">
+            <div class="row ">
+                <div class="col-md-8">
+                    <ul class="nav nav-pills mb-3 justify-content-between" id="pills-tab" role="tablist" style="border: 1px solid black; border-left: 5px solid rgb(0, 68, 73);">
+                        <!-- <li class="nav-item" role="presentation">
+                            <button class="nav-link" ><strong class="text-danger">LATEST NEWS</strong> </button>
+                          
+                          </li> -->
+
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#lpills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#lpills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                          <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#lpills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                        </li>
+
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#elpills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                          </li>
+
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#elpills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                          </li>
+
+                          <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#flpills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
+                          </li>
+
+
+                        <!-- <li class="nav-item" role="presentation">
+                            <a href="#" class="nav-link">SHOW ALL</a>
+                          </li> -->
+                      </ul>
+                      <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade show active" id="lpills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="row g-0">
+                                <div class="col-md-6" >
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <a href="" class="text-primary" style="text-decoration: none;">
+                                                <img src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid">
+
+
+                                                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+
+                                            <p>Entertainment - Feb9</p>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6" data-aos="fade-up">
+                                    <div class="row">
+                                        <div class="col-12" data-aos="fade-up">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        <div class="d-flex">
+
+                                                            <div class="">
+                                                                <img style="width: 100px; height: 100px; overflow: hidden;" src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+
+                                                            </div>        
+        
+                                                           <div class="ms-2">
+                                                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+            
+                                                            <p>Entertainment - Feb9</p>
+                                                           </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12" data-aos="fade-up">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        <div class="d-flex">
+
+                                                            <div class="">
+                                                                <img style="width: 100px; height: 100px; overflow: hidden;" src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+
+                                                            </div>        
+        
+                                                           <div class="ms-2">
+                                                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+            
+                                                            <p>Entertainment - Feb9</p>
+                                                           </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12" data-aos="fade-up">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        <div class="d-flex">
+
+                                                            <div class="">
+                                                                <img style="width: 100px; height: 100px; overflow: hidden;" src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+
+                                                            </div>        
+        
+                                                           <div class="ms-2">
+                                                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+            
+                                                            <p>Entertainment - Feb9</p>
+                                                           </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    
+
+
+
+                                    </div>
+                                </div>
+                            </div> <!--row-->
+                        </div>
+                        <div class="tab-pane fade" id="lpills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <a href="" class="text-primary" style="text-decoration: none;">
+                                                <img src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid">
+
+
+                                                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+
+                                            <p>Entertainment - Feb9</p>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        <div class="d-flex">
+
+                                                            <div class="">
+                                                                <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+
+                                                            </div>        
+        
+                                                           <div class="ms-2">
+                                                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+            
+                                                            <p>Entertainment - Feb9</p>
+                                                           </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        <div class="d-flex">
+
+                                                            <div class="">
+                                                                <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+
+                                                            </div>        
+        
+                                                           <div class="ms-2">
+                                                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+            
+                                                            <p>Entertainment - Feb9</p>
+                                                           </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div> <!--row-->
+                        </div>
+                        <div class="tab-pane fade" id="lpills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <a href="" class="text-primary" style="text-decoration: none;">
+                                                <img src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" class="img-fluid">
+
+
+                                                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+
+                                            <p>Entertainment - Feb9</p>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        <div class="d-flex">
+
+                                                            <div class="">
+                                                                <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+
+                                                            </div>        
+        
+                                                           <div class="ms-2">
+                                                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+            
+                                                            <p>Entertainment - Feb9</p>
+                                                           </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <a href="" class="text-primary" style="text-decoration: none;">
+                                                        <div class="d-flex">
+
+                                                            <div class="">
+                                                                <img style="max-width: 100%; height: 150px;" src="https://images.unsplash.com/photo-1505428998154-4c1fdec0f260?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
+
+                                                            </div>        
+        
+                                                           <div class="ms-2">
+                                                            <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, ex.</p>
+            
+                                                            <p>Entertainment - Feb9</p>
+                                                           </div>
+                                                        </div>
+                                                    </a>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    
+
+
+
+                                    </div>
+                                </div>
+                            </div> <!--row-->
+                        </div>
+                      </div>            
+                </div> <!--col-8-->
+
+                <div class="col-md-4">
+                    <div style="border: 1px solid blue;" class="p-2">
+                       <p style="margin-bottom: 0px;" >MOST POPULAR</p>
+                    </div>
+
+                    <div class="mt-3">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">1</span>
+                              Cras justo odio
+                              
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">2</span>
+                              Dapibus ac facilisis in
+                             
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">3</span>
+                              Morbi leo risus
+                             
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">4</span>
+                              Cras justo odio
+                              
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">5</span>
+                              Cras justo odio
+                              
+                            </li>
+                          </ul>
+                    </div>
+
+                   <div class="d-none d-md-block">
+                    <div class="bg-dark mt-2" style="width:350px; height:250px;">
+
+                    </div>
+                   </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--==========================LATEST POST FOR PHONE===============-->
+    <div id="laterst-phone d-none d-sm-block">
+        <div class="container">
+            <div class="d-flex justify-content-between border mt-2">
+                <div class="p-2">
+                    LATEST POST
+                </div>
+                <div class="p-2">
+                    <a href="#" style="text-decoration: none;">View All</a>
+                </div>
+            </div>
+
+            <div class="row gx-1">
+                <div class="col mt-1">
+                    <div class="card">
+                        <div class="card-body">
+                        
+                             <div>
+                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+     
+                             </div>
+     
+                             <div class="mt-1">
+                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                 <h6>Feb 6</h6>
+                             </div>
+                       
+     
+                        </div>
+                    </div>
+                 </div>
+
+                <div class="col mt-1">
+                   <div class="card">
+                       <div class="card-body">
+                       
+                            <div>
+                                <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+    
+                            </div>
+    
+                            <div class="mt-1">
+                                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                <h6>Feb 6</h6>
+                            </div>
+                      
+    
+                       </div>
+                   </div>
+                </div>
+
+
+                
+                <div class="col mt-1">
+                    <div class="card">
+                        <div class="card-body">
+                        
+                             <div>
+                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+     
+                             </div>
+     
+                             <div class="mt-1">
+                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                 <h6>Feb 6</h6>
+                             </div>
+                       
+     
+                        </div>
+                    </div>
+                 </div>
+
+                 
+                 
+                <div class="col mt-1">
+                    <div class="card">
+                        <div class="card-body">
+                        
+                             <div>
+                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+     
+                             </div>
+     
+                             <div class="mt-1">
+                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                 <h6>Feb 6</h6>
+                             </div>
+                       
+     
+                        </div>
+                    </div>
+                 </div>
+
+                 <div class="col mt-1">
+                    <div class="card">
+                        <div class="card-body">
+                        
+                             <div>
+                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+     
+                             </div>
+     
+                             <div class="mt-1">
+                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                 <h6>Feb 6</h6>
+                             </div>
+                       
+     
+                        </div>
+                    </div>
+                 </div>
+ 
+
+                
+
+            </div> <!--row-->
+            
+            <div class="row mt-2 d-md-none d-block">
+                <div class="col">
+                    <div style="border: 1px solid blue;" class="p-2">
+                       <p style="margin-bottom: 0px;" >MOST POPULAR</p>
+                    </div>
+
+                    <div class="mt-1">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">1</span>
+                              Cras justo odio
+                              
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">2</span>
+                              Dapibus ac facilisis in
+                             
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">3</span>
+                              Morbi leo risus
+                             
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">4</span>
+                              Cras justo odio
+                              
+                            </li>
+
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span class="badge bg-primary badge-pill">5</span>
+                              Cras justo odio
+                              
+                            </li>
+                          </ul>
+                    </div>
+
+                   <div class="d-none d-md-block">
+                    <div class="bg-dark mt-2" style="width:350px; height:250px;">
+
+                    </div>
+                   </div>
+
+                </div>
+            </div>
+
+            <div class="row text-center ">
+                <!-- <h4>what</h4> -->
+
+               
+                    <!-- <h4>what</h4> -->
+                    <div class="col-md-12 d-flex justify-content-center mt-2">
+                        <div class="bg-dark" style="width: 728px; height: 90px;">
+                            <h4>what now</h4>
+                        </div>
+                    </div>
+               
+               
+                <div class="col-md-12 d-flex justify-content-center d-md-none d-block">
+                    <div class="bg-dark" style="width: 320px; height: 250px;">
+                        <h4>what now</h4>
+                    
+                  </div>
+                </div>
+        
+             </div>
+
+
+
+            <!--=======================-->
+
+            <div class="d-flex justify-content-between border mt-2">
+                <div class="p-2">
+                    Course
+                </div>
+                <div class="p-2">
+                    <a href="#" style="text-decoration: none;">View All</a>
+                </div>
+            </div>
+
+            <div class="row gx-1">
+               
+
+                <div class="col mt-1">
+                   <div class="card">
+                       <div class="card-body">
+                       
+                            <div>
+                                <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+    
+                            </div>
+    
+                            <div class="mt-1">
+                                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                <h6>Feb 6</h6>
+                            </div>
+                      
+    
+                       </div>
+                   </div>
+                </div>
+
+
+                
+                <div class="col mt-1">
+                    <div class="card">
+                        <div class="card-body">
+                        
+                             <div>
+                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+     
+                             </div>
+     
+                             <div class="mt-1">
+                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                 <h6>Feb 6</h6>
+                             </div>
+                       
+     
+                        </div>
+                    </div>
+                 </div>
+
+                 
+                 
+                <div class="col mt-1">
+                    <div class="card">
+                        <div class="card-body">
+                        
+                             <div>
+                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+     
+                             </div>
+     
+                             <div class="mt-1">
+                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                 <h6>Feb 6</h6>
+                             </div>
+                       
+     
+                        </div>
+                    </div>
+                 </div>
+
+                 <div class="col mt-1">
+                    <div class="card">
+                        <div class="card-body">
+                        
+                             <div>
+                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
+     
+                             </div>
+     
+                             <div class="mt-1">
+                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
+                                 <h6>Feb 6</h6>
+                             </div>
+                       
+     
+                        </div>
+                    </div>
+                 </div>
+ 
+
+                
+
+            </div> <!--row-->
+           <!--=====================================-->
+
+
+    </div>
+    </div>
+
+
+    <!--================== Section 3rd ===============-->
+
+
+
+    <div id="all-article">
+        <div class="container mt-4">
+
+
+            <div class="row text-center d-none d-md-block ">
+                <!-- <h4>what</h4> -->
+               
+                <div class="col-md-12 d-flex justify-content-center">
+                    <div class="bg-dark" style="width: 728px; height: 90px;">
+                        <h4>what now</h4>
+                    
+                  </div>
+                </div>
+        
+             </div>
+
+         
+
+            <!---->
+
+
+
+
+            <!--=========================CAROUSEL PART =============================================-->
+
+            
+            <!--=====================================================================================-->
+
+
+          
+
+            <div class="col-12 mt-4 d-md-none d-block d-flex justify-content-center">
+                <div class="bg-dark" style="width: 320px; height: 50px;">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!--WEB SOCIAL SECTION====================================================-->
+
+
+
+    <!--========================= mobile social section ====================-->
+    <div class="container mt-3 d-md-none d-block">
+        <div class="p-2 mb-2 border">
+            <p style="margin-bottom: 0px;" >Connect with us</p>
+         </div>
+
+         <div class="row">
+             <div class="col">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Cras justo odio
+                      <span class="badge bg-primary rounded-pill">14</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Dapibus ac facilisis in
+                      <span class="badge bg-primary rounded-pill">2</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                      Morbi leo risus
+                      <span class="badge bg-primary rounded-pill">1</span>
+                    </li>
+                  </ul>
+             </div>
+         </div>
+
+
+
+    </div>
+
+
+
+    <!--News Letter-->
+
+    <!-- <div class="container d-none d-md-block mt-4">
+
+        <div class="row text-center">
+           
+            <div class="col-md-12 d-flex justify-content-center">
+                <div class="bg-dark" style="width: 728px; height: 90px;">
+                    <h4>what now</h4>
+                </div>
+            </div>
+        </div>
+
+
+    </div> -->
+
+
+
+    <!--=============== NEWS LETTER =======================-->
+    <div id="newsLetter" class="bg-one mt-4">
+        <div class="container">
+            <div class="p-5 text-white">
+                <h4>SUBSCRIBE TO NEWSLETTER</h4>
+
+                <div class="row g-3">
+                    <div class="col-sm-8">
+                      <input type="text" class="form-control" placeholder="Enter your email" aria-label="City">
+                    </div>
+
+                    <div class="col-4">
+                        <button class="btn btn-warning" style="width: 100%;">Subsribe</button>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+
+    </div>
+
+
+    <!--===========FOOTER===============-->
+
+
+
+
+
+    <!--=================================================-->
+
+
+
+
+
+    <!--=======================================-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
+    <!--=============================================-->
+
+
+    <!---------------->
+    <script>
+        AOS.init();
+
+        // ScrollReveal().reveal('.container'); 
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function(){
+// make it as accordion for smaller screens
+            if (window.innerWidth > 992) {
+
+                document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
+
+                    everyitem.addEventListener('mouseover', function(e){
+
+                        let el_link = this.querySelector('a[data-bs-toggle]');
+
+                        if(el_link != null){
+                            let nextEl = el_link.nextElementSibling;
+                            el_link.classList.add('show');
+                            nextEl.classList.add('show');
+                        }
+
+                    });
+                    everyitem.addEventListener('mouseleave', function(e){
+                        let el_link = this.querySelector('a[data-bs-toggle]');
+
+                        if(el_link != null){
+                            let nextEl = el_link.nextElementSibling;
+                            el_link.classList.remove('show');
+                            nextEl.classList.remove('show');
+                        }
+
+
+                    })
+                });
+
+            }
+            // end if innerWidth
+            }); 
+
+
+
+
+
+            ///
+
+            
+        </script>
+    
+</body>
+</html>

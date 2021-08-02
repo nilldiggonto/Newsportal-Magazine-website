@@ -58,6 +58,8 @@ class Post(models.Model):
     summary_three       =   models.TextField(null=True,blank=True)
     summary_four        =   models.TextField(null=True,blank=True)
 
+    primary_featured    =   models.BooleanField(default=True)
+
     featured            =   models.BooleanField(default=False)
     active              =   models.BooleanField(default=False)
 

@@ -1,0 +1,107 @@
+<div id="feature" class="d-none d-md-block">
+    <div class="container mt-4">
+        <div class="row g-1">
+            <content class="col-md-6">
+
+                <figure>
+                    <img src="{{prime_feature.intro_image.url}}" style="height:405px;object-fit:cover;" class="img-responsive img-rounded" valign="absmiddle" />
+                    <h4 class="p-2">{{prime_feature.scategory}}</h4>
+                    <div class="overlay">
+                        <div class="description">
+                            <a href="" style="text-decoration: none; color: aliceblue;">
+                                <p>{{prime_feature.title}}</p>
+                                <p>created at</p>
+                            </a>
+                        </div>
+                    </div>
+                </figure>
+        
+            </content>
+
+          <div class="col-md-6">
+              <div class="row g-1">
+                  {%for f in featured %}
+                <content class="col-md-6" >
+
+                    <figure >
+                        <img src="{{f.intro_image.url}}"  class="img-fluid img-rounded" valign="absmiddle" style="height:200px;object-fit:cover;" />
+                        <h4 class="p-2">{{f.scategory}}</h4>
+                        <div class="overlay">
+                            <div class="description">
+                                <a href="" style="text-decoration: none; color: aliceblue;">
+                                    <p>{{f.title}}</p>
+                                    <p>{{f.created_at}}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+            
+                </content>
+                {% endfor%}
+
+                <!-- <content class="col-md-6">
+    
+                    <figure>
+                        <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                        <h4>Business</h4>
+                        <div class="overlay">
+                            <div class="description">
+                                <a href="">
+                                    all about business
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+            
+                </content> -->
+                <!-- <content class="col-md-6">
+    
+                    <figure>
+                        <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                        <h4>Business</h4>
+                        <div class="overlay">
+                            <div class="description">
+                                <a href="">
+                                    all about business
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+            
+                </content> -->
+                <!-- <content class="col-md-6">
+    
+                    <figure>
+                        <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                        <h4>Business</h4>
+                        <div class="overlay">
+                            <div class="description">
+                                <a href="">
+                                    all about business
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+            
+                </content> -->
+              </div>
+          </div>
+
+            
+
+            <!-- <aside class="col-md-4 col-lg-4 col-sm-4">
+
+                <figure>
+                    <img src="https://jaguar.ssl.cdn.sdlmedia.com/636353687510047376OV.jpg" class="img-responsive img-rounded" valign="absmiddle" />
+                    <h4>Games</h4>
+                    <div class="overlay">
+                        <div class="description">
+                            All About games
+                        </div>
+                    </div>
+                </figure>
+        
+            </aside> -->
+        </div>
+    </div>
+</div>

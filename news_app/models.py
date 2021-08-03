@@ -59,6 +59,7 @@ class Post(models.Model):
     summary_four        =   models.TextField(null=True,blank=True)
 
     primary_featured    =   models.BooleanField(default=True)
+    popular             =   models.BooleanField(default=False)
 
     featured            =   models.BooleanField(default=False)
     active              =   models.BooleanField(default=False)
@@ -70,6 +71,9 @@ class Post(models.Model):
         slug_str = str(self.title)
         unique_slugify(self, slug_str) 
         return super().save(**kwargs)
+
+    class Meta:
+        ordering = ['-id']
 
 
     

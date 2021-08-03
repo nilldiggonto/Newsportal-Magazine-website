@@ -24,7 +24,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'news_app'
+    'news_app',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

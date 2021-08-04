@@ -28,7 +28,7 @@ class CustomPagination(pagination.PageNumberPagination):
 
 # Create your views here.
 def homepage(request):
-    template_name = 'base/base.html'
+    template_name = 'base/base_home.html'
     postcategory = PostCategory.objects.all()
     subcategory = PostSubCategory.objects.all()
     primary_featured = Post.objects.filter(primary_featured=True).order_by('-id')[0]
@@ -50,10 +50,15 @@ def homepage(request):
 
 ########### CATEGORY PAGE
 def category_page(request,slug):
-    obj = get_object_or_404(PostCategory, slug=slug)
+    obj = get_object_or_404(PostSubCategory, slug=slug)
+    postcategory = PostCategory.objects.all()
     template_name = 'pages/category.html'
+    all_cat = PostSubCategory.objects.filter(category=obj.category)
+    print(all_cat)
     context = {
         "obj":obj,
+        'postcategory':postcategory,
+        'all_cat':all_cat
     }
     return render(request,template_name,context)
     

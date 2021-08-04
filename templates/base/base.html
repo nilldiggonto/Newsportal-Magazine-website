@@ -39,6 +39,11 @@
         
     </style>
 
+
+{%block style%}
+
+{%endblock style%}
+
     <!--=========================================-->
 
 </head>
@@ -115,81 +120,10 @@
         </div>
     </div>
 
-    <!--============ Feature CONTENT ======================-->
-    {% include 'partial/featured.html' %}
+   {%block content%}
 
 
-    <!--==================== LATEST ARTICLE =======================-->
-
-    {%include 'partial/home_latest.html' %}
-
-    <!--==========================LATEST POST FOR PHONE===============-->
-    {%include 'partial/category_post.html' %}
-    <!--================== Section 3rd ===============-->
-
-
-
-    
-    <!--WEB SOCIAL SECTION====================================================-->
-
-
-
-    <!--========================= mobile social section ====================-->
-    <div class="container mt-3 d-md-none d-block">
-        <div class="p-2 mb-2 border">
-            <p style="margin-bottom: 0px;" >Connect with us</p>
-         </div>
-
-         <div class="row">
-             <div class="col">
-                <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Cras justo odio
-                      <span class="badge bg-primary rounded-pill">14</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Dapibus ac facilisis in
-                      <span class="badge bg-primary rounded-pill">2</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                      Morbi leo risus
-                      <span class="badge bg-primary rounded-pill">1</span>
-                    </li>
-                  </ul>
-             </div>
-         </div>
-
-
-
-    </div>
-
-
-
-
-
-
-    <!--=============== NEWS LETTER =======================-->
-    <div id="newsLetter" class="bg-one mt-4">
-        <div class="container">
-            <div class="p-5 text-white">
-                <h4>SUBSCRIBE TO NEWSLETTER</h4>
-
-                <div class="row g-3">
-                    <div class="col-sm-8">
-                      <input type="text" class="form-control" placeholder="Enter your email" aria-label="City">
-                    </div>
-
-                    <div class="col-4">
-                        <button class="btn btn-warning" style="width: 100%;">Subsribe</button>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-
-    </div>
-
-
+   {%endblock%}
     <!--===========FOOTER===============-->
 
     {% include 'partial/footer.html' %}
@@ -284,6 +218,11 @@
 
             
         </script>
+
+        {%block script %}
+
+
+        {%endblock script%}
     
 </body>
 </html>

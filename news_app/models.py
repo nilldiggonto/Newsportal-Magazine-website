@@ -25,9 +25,9 @@ class PostCategory(models.Model):
         unique_slugify(self, slug_str) 
         return super().save(**kwargs)
 
-    def get_absolute_url(self):
-        # return f"/category/{self.slug}/"
-        return reverse("category-page", kwargs={"slug": self.slug})
+    # def get_absolute_url(self):
+    #     # return f"/category/{self.slug}/"
+    #     return reverse("category-page", kwargs={"slug": self.slug})
 
 
 class PostSubCategory(models.Model):
@@ -47,6 +47,10 @@ class PostSubCategory(models.Model):
         slug_str = str(self.sub_name)
         unique_slugify(self, slug_str) 
         return super().save(**kwargs)
+        
+    def get_absolute_url(self):
+        # return f"/category/{self.slug}/"
+        return reverse("category-page", kwargs={"slug": self.slug})
 
 class Post(models.Model):
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django Server</title>
+    <title>News Carrier {%block title%} {%endblock title%}</title>
 
     <!--===========================================-->
     <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.css">
@@ -24,7 +24,7 @@
 
     <style>
         .bg-one{
-            background-color: rgb(4, 38, 54);
+            background-color: rgb(36, 110, 145);
         }
 
       
@@ -124,342 +124,12 @@
     {%include 'partial/home_latest.html' %}
 
     <!--==========================LATEST POST FOR PHONE===============-->
-    <div id="laterst-phone d-none d-sm-block">
-        <div class="container">
-            <div class="d-flex justify-content-between border mt-2">
-                <div class="p-2">
-                    LATEST POST
-                </div>
-                <div class="p-2">
-                    <a href="#" style="text-decoration: none;">View All</a>
-                </div>
-            </div>
-
-            <div class="row gx-1">
-                <div class="col mt-1">
-                    <div class="card">
-                        <div class="card-body">
-                        
-                             <div>
-                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-     
-                             </div>
-     
-                             <div class="mt-1">
-                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                 <h6>Feb 6</h6>
-                             </div>
-                       
-     
-                        </div>
-                    </div>
-                 </div>
-
-                <div class="col mt-1">
-                   <div class="card">
-                       <div class="card-body">
-                       
-                            <div>
-                                <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-    
-                            </div>
-    
-                            <div class="mt-1">
-                                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                <h6>Feb 6</h6>
-                            </div>
-                      
-    
-                       </div>
-                   </div>
-                </div>
-
-
-                
-                <div class="col mt-1">
-                    <div class="card">
-                        <div class="card-body">
-                        
-                             <div>
-                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-     
-                             </div>
-     
-                             <div class="mt-1">
-                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                 <h6>Feb 6</h6>
-                             </div>
-                       
-     
-                        </div>
-                    </div>
-                 </div>
-
-                 
-                 
-                <div class="col mt-1">
-                    <div class="card">
-                        <div class="card-body">
-                        
-                             <div>
-                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-     
-                             </div>
-     
-                             <div class="mt-1">
-                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                 <h6>Feb 6</h6>
-                             </div>
-                       
-     
-                        </div>
-                    </div>
-                 </div>
-
-                 <div class="col mt-1">
-                    <div class="card">
-                        <div class="card-body">
-                        
-                             <div>
-                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-     
-                             </div>
-     
-                             <div class="mt-1">
-                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                 <h6>Feb 6</h6>
-                             </div>
-                       
-     
-                        </div>
-                    </div>
-                 </div>
- 
-
-                
-
-            </div> <!--row-->
-            
-            <div class="row mt-2 d-md-none d-block">
-                <div class="col">
-                    <div style="border: 1px solid blue;" class="p-2">
-                       <p style="margin-bottom: 0px;" >MOST POPULAR</p>
-                    </div>
-
-                    <div class="mt-1">
-                        <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge bg-primary badge-pill">1</span>
-                              Cras justo odio
-                              
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge bg-primary badge-pill">2</span>
-                              Dapibus ac facilisis in
-                             
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge bg-primary badge-pill">3</span>
-                              Morbi leo risus
-                             
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge bg-primary badge-pill">4</span>
-                              Cras justo odio
-                              
-                            </li>
-
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <span class="badge bg-primary badge-pill">5</span>
-                              Cras justo odio
-                              
-                            </li>
-                          </ul>
-                    </div>
-
-                   <div class="d-none d-md-block">
-                    <div class="bg-dark mt-2" style="width:350px; height:250px;">
-
-                    </div>
-                   </div>
-
-                </div>
-            </div>
-
-            <div class="row text-center ">
-                <!-- <h4>what</h4> -->
-
-               
-                    <!-- <h4>what</h4> -->
-                    <div class="col-md-12 d-flex justify-content-center mt-2">
-                        <div class="bg-dark" style="width: 728px; height: 90px;">
-                            <h4>what now</h4>
-                        </div>
-                    </div>
-               
-               
-                <div class="col-md-12 d-flex justify-content-center d-md-none d-block">
-                    <div class="bg-dark" style="width: 320px; height: 250px;">
-                        <h4>what now</h4>
-                    
-                  </div>
-                </div>
-        
-             </div>
-
-
-
-            <!--=======================-->
-
-            <div class="d-flex justify-content-between border mt-2">
-                <div class="p-2">
-                    Course
-                </div>
-                <div class="p-2">
-                    <a href="#" style="text-decoration: none;">View All</a>
-                </div>
-            </div>
-
-            <div class="row gx-1">
-               
-
-                <div class="col mt-1">
-                   <div class="card">
-                       <div class="card-body">
-                       
-                            <div>
-                                <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-    
-                            </div>
-    
-                            <div class="mt-1">
-                                <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                <h6>Feb 6</h6>
-                            </div>
-                      
-    
-                       </div>
-                   </div>
-                </div>
-
-
-                
-                <div class="col mt-1">
-                    <div class="card">
-                        <div class="card-body">
-                        
-                             <div>
-                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-     
-                             </div>
-     
-                             <div class="mt-1">
-                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                 <h6>Feb 6</h6>
-                             </div>
-                       
-     
-                        </div>
-                    </div>
-                 </div>
-
-                 
-                 
-                <div class="col mt-1">
-                    <div class="card">
-                        <div class="card-body">
-                        
-                             <div>
-                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-     
-                             </div>
-     
-                             <div class="mt-1">
-                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                 <h6>Feb 6</h6>
-                             </div>
-                       
-     
-                        </div>
-                    </div>
-                 </div>
-
-                 <div class="col mt-1">
-                    <div class="card">
-                        <div class="card-body">
-                        
-                             <div>
-                                 <img class="img-fluid" src="https://images.unsplash.com/photo-1527467779599-34448b3fa6a7?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="" >
-     
-                             </div>
-     
-                             <div class="mt-1">
-                                 <h6>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, deleniti?</h6>
-                                 <h6>Feb 6</h6>
-                             </div>
-                       
-     
-                        </div>
-                    </div>
-                 </div>
- 
-
-                
-
-            </div> <!--row-->
-           <!--=====================================-->
-
-
-    </div>
-    </div>
-
-
+    {%include 'partial/category_post.html' %}
     <!--================== Section 3rd ===============-->
 
 
 
-    <div id="all-article">
-        <div class="container mt-4">
-
-
-            <div class="row text-center d-none d-md-block ">
-                <!-- <h4>what</h4> -->
-               
-                <div class="col-md-12 d-flex justify-content-center">
-                    <div class="bg-dark" style="width: 728px; height: 90px;">
-                        <h4>what now</h4>
-                    
-                  </div>
-                </div>
-        
-             </div>
-
-         
-
-            <!---->
-
-
-
-
-            <!--=========================CAROUSEL PART =============================================-->
-
-            
-            <!--=====================================================================================-->
-
-
-          
-
-            <div class="col-12 mt-4 d-md-none d-block d-flex justify-content-center">
-                <div class="bg-dark" style="width: 320px; height: 50px;">
-
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
+    
     <!--WEB SOCIAL SECTION====================================================-->
 
 
@@ -495,21 +165,6 @@
 
 
 
-    <!--News Letter-->
-
-    <!-- <div class="container d-none d-md-block mt-4">
-
-        <div class="row text-center">
-           
-            <div class="col-md-12 d-flex justify-content-center">
-                <div class="bg-dark" style="width: 728px; height: 90px;">
-                    <h4>what now</h4>
-                </div>
-            </div>
-        </div>
-
-
-    </div> -->
 
 
 
@@ -529,8 +184,6 @@
                     </div>
                 </div>
             </div>
-
-
             
         </div>
 
@@ -539,7 +192,7 @@
 
     <!--===========FOOTER===============-->
 
-
+    {% include 'partial/footer.html' %}
 
 
 

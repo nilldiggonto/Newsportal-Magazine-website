@@ -1,0 +1,43 @@
+<div id="laterst-phone d-none d-sm-block">
+    <div class="container">
+        {% for f in featured_category %}
+        <div class="d-flex justify-content-between border mt-2">
+            <div class="p-2">
+               {{f.sub_name}}
+            </div>
+            <div class="p-2">
+                <a href="#" style="text-decoration: none;">View All</a>
+            </div>
+        </div>
+
+        <div class="row gx-1">
+            {% for p in f.post.all %}
+            {% if p.active %}
+            <div class="col mt-1">
+                <div class="card">
+                   
+                    <div class="card-body text-center">
+                    
+                         <div>
+                             <img style="width: 200px; height: 150px; object-fit: cover;" src="{{p.intro_image.url}}" alt="" >
+ 
+                         </div>
+ 
+                         <div class="mt-1">
+                             <h6>{{p.title}}</h6>
+                             <h6>Feb 6</h6>
+                         </div>
+                   
+ 
+                    </div>
+                </div>
+             </div>
+             {% endif%}
+            {% endfor%}    
+
+        </div> <!--row-->
+        {% endfor%}
+
+</div>
+</div>
+

@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import PostCategory,Post,PostSubCategory
 from .serializers import PostSerializer
+# from django.re
 
 
 ############# DRF IMPORT
@@ -31,15 +32,24 @@ def homepage(request):
     primary_featured = Post.objects.filter(primary_featured=True).order_by('-id')[0]
     featured_home = Post.objects.filter(featured=True)[:4]
     all_post = Post.objects.filter(active=True)[:5]
+    popular_post = Post.objects.filter(active=True,popular=True)
+    featured_category = PostSubCategory.objects.filter(featured=True)
 
     context = {
         'postcategory':postcategory,
         'featured':featured_home,
         'subcategory':subcategory,
         'prime_feature':primary_featured,
-        'all_post':all_post
+        'all_post':all_post,
+        'popular_post':popular_post,
+        'featured_category':featured_category
     }
     return render(request,template_name,context)
+
+########### CATEGORY PAGE
+def categoryPage(request,slug):
+    pass
+
 
 class LatestPostAPIView(APIView):
     # pagination_class = PostPagination

@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import pre_save
 from django.utils.text import slugify
 from .utils import unique_slugify
+from django.urls import reverse
 
 
 
@@ -24,12 +25,16 @@ class PostCategory(models.Model):
         unique_slugify(self, slug_str) 
         return super().save(**kwargs)
 
+    # def get_absolute_url(self):
+    #     return reverse("medical_product:category", kwargs={"slug": self.slug}
+
 
 class PostSubCategory(models.Model):
     category    =   models.ForeignKey(PostCategory,related_name='subcategory',on_delete=models.CASCADE)
     slug        = models.SlugField(max_length=300,unique=True,null=True,blank=True)
     sub_name    =   models.CharField(max_length=20)
     rank        =   models.IntegerField(default=1)
+    featured    =   models.BooleanField(default=False)
     active      =   models.BooleanField(default=True)
     created_at  =   models.DateTimeField(auto_now=True)
     updated_at  =   models.DateTimeField(auto_now_add=True)

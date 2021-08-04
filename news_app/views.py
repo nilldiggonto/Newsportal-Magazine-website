@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import PostCategory,Post,PostSubCategory
 from .serializers import PostSerializer
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404
 # from django.re
 
 
@@ -47,8 +49,14 @@ def homepage(request):
     return render(request,template_name,context)
 
 ########### CATEGORY PAGE
-def categoryPage(request,slug):
-    pass
+def category_page(request,slug):
+    obj = get_object_or_404(PostCategory, slug=slug)
+    template_name = 'pages/category.html'
+    context = {
+        "obj":obj,
+    }
+    return render(request,template_name,context)
+    
 
 
 class LatestPostAPIView(APIView):

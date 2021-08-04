@@ -85,7 +85,7 @@
                                         {% for scat in cat.subcategory.all %}
                                       <button  class="nav-link text-dark active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#{{scat.slug}}" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">{{scat.sub_name}}</button>
                                       {%endfor%}
-                                      <a class="btn btn-info" href="#">View All</a>
+                                      <a class="btn btn-info" href=" {{ cat.get_absolute_url}}">View All</a>
                                     </div>
                                     <div class="tab-content" id="v-pills-tabContent" style="width: 100%;">
                                         {% for scat in cat.subcategory.all %}

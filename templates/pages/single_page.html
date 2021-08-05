@@ -1,0 +1,63 @@
+{%extends 'base/base.html'%}
+
+
+{%block content%}
+
+<div id="category-page" class="d-none d-md-block mt-2">
+    <div class="container">
+     <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="{%url 'home-page' %}">Home</a></li>
+         <li class="breadcrumb-item"><a href="{%url 'home-page' %}">Category</a></li>
+         <li class="breadcrumb-item active">title of the post</li>
+       </ol>
+    </div>
+     
+ </div>
+
+ <div id="single-page">
+     <div class="container">
+        <h4 class="p-2"><strong>Category</strong></h4>
+
+        <div class="row mt-4">
+            <div class="col-md-8">
+            <h4><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, cumque?</b></h4>
+            <span>written by:nill feb 19 | views:1231 | 0 comment</span>
+
+            <div class="mt-2">
+            <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" style="width:100%; height: 300px; object-fit: contain;" alt="">
+
+            </div>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptatem architecto quia quam autem quisquam ex veritatis necessitatibus facilis quibusdam?
+            </p>
+
+            <p mt-2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptatem architecto quia quam autem quisquam ex veritatis necessitatibus facilis quibusdam?
+            </p>
+
+            <p mt-2>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit voluptatem architecto quia quam autem quisquam ex veritatis necessitatibus facilis quibusdam?
+            </p>
+
+            <div>
+                <span><b>Tags:  </b></span>
+                <span>One</span>
+                <span>Two</span>
+            </div>
+
+            <div class="mt-1">
+                Share:
+                <a class="btn btn-info" href="">Fb</a>
+                <a class="btn btn-info" href="">Fb</a>
+                <a class="btn btn-info" href="">Fb</a>
+                <a class="btn btn-info" href="">Fb</a>
+
+            </div>
+            </div> <!--.col-md-8-->
+            
+        </div>
+     </div>
+ </div>
+
+{%endblock%}

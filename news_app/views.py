@@ -61,6 +61,22 @@ def category_page(request,slug):
         'all_cat':all_cat
     }
     return render(request,template_name,context)
+
+############## SINGLE PAGE
+def single_page(request,slug):
+    template_name = 'pages/single_page.html'
+
+    postcategory = PostCategory.objects.all()
+
+    print(slug)
+    context = {
+       
+        'postcategory':postcategory,
+        
+    }
+    return render(request,template_name,context=context)
+
+
     
 
 

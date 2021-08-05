@@ -68,8 +68,11 @@ class LatestPostAPIView(APIView):
     # pagination_class = PostPagination
     pagination_class = CustomPagination()
 
-    def get(self,request,format=None):
-        qs = Post.objects.filter(active=True)
+    def get(self,request,format=None,slug=None):
+        slug = self.kwargs.get('slug')
+        # print(slug)
+        scategory = PostSubCategory.objects.get(slug=slug)
+        qs = Post.objects.filter(active=True,scategory=scategory)
         page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
         if page is not None:
             serializer = PostSerializer(page, many=True)

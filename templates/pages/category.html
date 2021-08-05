@@ -80,10 +80,10 @@
                 <div class="p-2 border">
                     <h6>{{obj.sub_name}} posts</h6>
                 </div>
-                <div class="row mt-1 g-1">
+                <div class="row mt-1 g-1" id="fetch-post">
 
                     <!--============================-->
-                    {% for post in obj.post.all %}
+                    <!-- for post in obj.post.all %}
                     <div class="col-md-6 mb-1">
                         <div class="card">
                             <div class="card-body text-center">
@@ -99,43 +99,20 @@
                                </a>
                             </div>
                         </div>
-                    </div> <!--col-6-->
-                    {% endfor%}
+                    </div> 
+                     endfor%} -->
 
    
 
 
                     
-                            <div class="mt-3 d-flex justify-content-center">
-                                <ul class="pagination">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#">&laquo;</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">4</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">5</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">&raquo;</a>
-                                </li>
-                                </ul>
-                            </div>
-                     
 
 
 
                 </div><!--row-->
+                <div class="mt-3 d-flex justify-content-center">
+                    <button class="btn btn-info btn-sm" onclick="myFunction()" id="fetch-button">Click me</button>
+                 </div>
             </div><!--col-8-->
 
             <div class="col-md-4">
@@ -191,5 +168,121 @@
     </div>
 </div>
 
+<!-- <hr>
+<div id="fetch-post">
+    
+</div> -->
+
+
 
 {%endblock content%}
+
+
+{%block script%}
+
+<script>
+    let a = "a"
+    let b = 1
+    let url = "http://127.0.0.1:8000/api/latest/post/e1/{{obj.slug}}" 
+
+
+    //================================================================
+
+    var requestOptions = {
+            method: 'GET',
+            redirect: 'follow'
+            };
+
+            fetch(url, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                // console.log(result)
+                
+                    // console.log(result)
+                    url = result['links']['next']
+                    myArray = result['results']
+                    myArray.forEach(function (item) {
+                        
+                        document.getElementById("fetch-post").innerHTML += `
+                        <div class="col-md-6 mb-1">
+                        <div class="card">
+                            <div class="card-body text-center">
+                               <a href="">
+                                <div class="img-hover-zoom">
+                                    <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
+    
+                                    </div>
+                                    <div class="mt-2">
+                                        <p>${item.title}</p>
+                                        <p>Nill@Feb july</p>
+                                    </div>
+                               </a>
+                            </div>
+                        </div>
+                    </div> 
+
+                       
+
+                        `
+                       
+                    });
+                    if (result['links']['next'] == null){
+                   
+                        document.getElementById("fetch-button").classList.add("d-none");
+                    }
+            })
+            .catch(error => console.log('error', error));
+
+//===========================================================================
+    function myFunction() {
+    
+            // var requestOptions = {
+            // method: 'GET',
+            // redirect: 'follow'
+            // };
+
+            fetch(url, requestOptions)
+            .then(response => response.json())
+            .then(result => {
+                console.log(result)
+                
+                    console.log(result)
+                    url = result['links']['next']
+                    myArray = result['results']
+                    myArray.forEach(function (item) {
+                        
+                        document.getElementById("fetch-post").innerHTML += `
+
+                        <div class="col-md-6 mb-1">
+                        <div class="card">
+                            <div class="card-body text-center">
+                               <a href="">
+                                <div class="img-hover-zoom">
+                                    <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
+    
+                                    </div>
+                                    <div class="mt-2">
+                                        <p>${item.title}</p>
+                                        <p>Nill@Feb july</p>
+                                    </div>
+                               </a>
+                            </div>
+                        </div>
+                    </div> 
+
+                        `
+                       
+                    });
+                    if (result['links']['next'] == null){
+                   
+                        document.getElementById("fetch-button").classList.add("d-none");
+                    }
+            })
+            .catch(error => console.log('error', error));
+
+
+        }
+       
+</script>
+
+{%endblock script%}

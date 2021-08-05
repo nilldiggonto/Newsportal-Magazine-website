@@ -7,6 +7,6 @@ urlpatterns = [
     path('category/<str:slug>/',category_page,name='category-page'),
 
     
-    path('api/latest/post/e1/',LatestPostAPIView.as_view(),name='api-latest-post-e1'),
+    path('api/latest/post/e1/<str:slug>/',LatestPostAPIView.as_view(),name='api-latest-post-e1'),
     
 ]

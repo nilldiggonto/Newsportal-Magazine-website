@@ -126,7 +126,7 @@
      <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="{%url 'home-page' %}">Home</a></li>
          <li class="breadcrumb-item"><a href="{%url 'home-page' %}">Category</a></li>
-         <li class="breadcrumb-item active">title of the post</li>
+         <li class="breadcrumb-item active">{{obj.title}}</li>
        </ol>
     </div>
      
@@ -134,15 +134,15 @@
 
  <div id="single-page" class="mb-4">
      <div class="container">
-        <h4 class="p-2"><strong>Category</strong></h4>
+        <h4 class="p-2"><strong>{{obj.scategory}}</strong></h4>
 
         <div class="row mt-4">
             <div class="col-md-8">
-            <h4><b>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, cumque?</b></h4>
+            <h4><b>{{obj.title}}</b></h4>
             <span>written by:nill feb 19 | views:1231 | 0 comment</span>
 
             <div class="mt-2">
-            <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" style="width:100%; height: 300px; object-fit: contain;" alt="">
+            <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: contain;" alt="">
 
             </div>
 
@@ -245,19 +245,21 @@
                 <h6>Related Post</h6>
             </div>
             <div class="row g-1">
+
+                {% for item in obj.scategory.post.all %}
+
+                    {%if not item.slug == obj.slug %}
                 <div class="col-6">
-                    <a href="">
-                <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" style="width:100%; height: 100px; object-fit: cover;" alt="">
+                    <a href="{{item.get_absolute_url}}">
+                       
+                <img src="{{item.intro_image.url}}" style="width:100%; height: 100px; object-fit: cover;" alt="">
 
                     </a>
                 </div>
+                    {%endif%}
+                {% endfor%}
 
-                <div class="col-6">
-                    <a href="">
-                <img src="https://images.unsplash.com/photo-1609743522653-52354461eb27?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80" style="width:100%; height: 100px; object-fit: cover;" alt="">
-
-                    </a>
-                </div>
+             
             </div>
             </div>
 

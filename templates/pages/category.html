@@ -50,7 +50,7 @@
             <div class="col-md-4">
                 <div class="card">
                     <div class="card-body text-center">
-                           <a href="">
+                           <a href="{{post.get_absolute_url}}">
                             <div class="img-hover-zoom">
                                 <img style="width: 400px; height: 200px; object-fit: cover;" src="{{post.intro_image.url}}" alt="" class="img-fluid">
 
@@ -81,26 +81,6 @@
                     <h6>{{obj.sub_name}} posts</h6>
                 </div>
                 <div class="row mt-1 g-1" id="fetch-post">
-
-                    <!--============================-->
-                    <!-- for post in obj.post.all %}
-                    <div class="col-md-6 mb-1">
-                        <div class="card">
-                            <div class="card-body text-center">
-                               <a href="">
-                                <div class="img-hover-zoom">
-                                    <img style="width: 400px; height: 200px; object-fit: cover;" src="{{post.intro_image.url}}" alt="" class="img-fluid">
-    
-                                    </div>
-                                    <div class="mt-2">
-                                        <p>{{post.title}}</p>
-                                        <p>Nill@Feb july</p>
-                                    </div>
-                               </a>
-                            </div>
-                        </div>
-                    </div> 
-                     endfor%} -->
 
    
 

@@ -68,7 +68,7 @@ def single_page(request,slug):
 
     postcategory = PostCategory.objects.all()
 
-    print(slug)
+    # print(slug)
     context = {
        
         'postcategory':postcategory,

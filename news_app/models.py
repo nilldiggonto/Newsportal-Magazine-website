@@ -85,8 +85,8 @@ class Post(models.Model):
     class Meta:
         ordering = ['-id']
 
-    # def get_absolute_url(self):
-    #     return reverse("category-page", kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+        return reverse("single-page", kwargs={"slug": self.slug})
 
 
     

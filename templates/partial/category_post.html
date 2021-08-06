@@ -16,20 +16,22 @@
             <div class="col mt-1">
                 <div class="card">
                    
+                   <a href="{{p.get_absolute_url}}">
                     <div class="card-body text-center">
                     
-                         <div>
-                             <img style="width: 200px; height: 150px; object-fit: cover;" src="{{p.intro_image.url}}" alt="" >
- 
-                         </div>
- 
-                         <div class="mt-1">
-                             <h6>{{p.title}}</h6>
-                             <h6>Feb 6</h6>
-                         </div>
-                   
- 
-                    </div>
+                        <div>
+                            <img style="width: 200px; height: 150px; object-fit: cover;" src="{{p.intro_image.url}}" alt="" >
+
+                        </div>
+
+                        <div class="mt-1">
+                            <h6>{{p.title}}</h6>
+                            <h6>Feb 6</h6>
+                        </div>
+                  
+
+                   </div>
+                   </a>
                 </div>
              </div>
              {% endif%}

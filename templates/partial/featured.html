@@ -8,7 +8,7 @@
                     <h4 class="p-2">{{prime_feature.scategory}}</h4>
                     <div class="overlay">
                         <div class="description">
-                            <a href="" style="text-decoration: none; color: aliceblue;">
+                            <a href="{{prime_feature.get_absolute_url}}" style="text-decoration: none; color: aliceblue;">
                                 <p>{{prime_feature.title}}</p>
                                 <p>created at</p>
                             </a>
@@ -28,7 +28,7 @@
                         <h4 class="p-2">{{f.scategory}}</h4>
                         <div class="overlay">
                             <div class="description">
-                                <a href="" style="text-decoration: none; color: aliceblue;">
+                                <a href="{{f.get_absolute_url}}" style="text-decoration: none; color: aliceblue;">
                                     <p>{{f.title}}</p>
                                     <p>{{f.created_at}}</p>
                                 </a>

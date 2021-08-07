@@ -1,0 +1,46 @@
+{%extends 'base/base_two.html'%}
+
+
+{%block content%}
+
+<div class="container border p-4" style="margin-top:10%; border-radius:15px">
+
+    <div class="row g-0">
+        <div class="col-md-6 d-none d-md-block" style="margin-top:10% ;">
+
+            <div class="text-center">
+                <h4>The News Carrier</h4>
+                <p class="lead">Welcome</p>
+            </div>
+
+        </div>
+        <div class="col-md-6 align-middle" >
+            <h3 class="text-center">The News Carrier</h3>
+            <h4 class="text-center">Login Now</h4>
+            <form method="POST" class="p-2">
+                {%csrf_token%}
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" placeholder="username" name="username">
+                  </div>
+    
+                  <div class="mb-3">
+                    <label for="password" class="form-label">password</label>
+                    <input type="password" class="form-control" id="password" placeholder="password" name="password">
+                  </div>
+    
+                  <div class="mb-3 d-grid gap-2">
+                      <button class="btn btn-info btn-sm">Login</button>
+                  </div>
+            </form>
+
+            <div class="d-flex justify-content-between">
+                <span>forget password</span>
+                <span>Create new account</span>
+            </div>
+              
+        </div>
+    </div>
+</div>
+
+{%endblock content%}

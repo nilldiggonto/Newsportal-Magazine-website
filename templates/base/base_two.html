@@ -20,7 +20,7 @@
 
     <!--==========CUSTOM SYTLE===============-->
 
-    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'style.css' "> -->
 
     <style>
         .bg-one{
@@ -72,7 +72,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" ></script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
 
 
     <!-- <script src="https://unpkg.com/scrollreveal"></script> -->
@@ -84,70 +84,6 @@
         AOS.init();
 
         // ScrollReveal().reveal('.container'); 
-
-
-
-
-        document.addEventListener("DOMContentLoaded", function(){
-            // make it as accordion for smaller screens
-            if (window.innerWidth > 992) {
-
-                document.querySelectorAll('.navbar .nav-item').forEach(function(everyitem){
-
-                    everyitem.addEventListener('mouseover', function(e){
-
-                        let el_link = this.querySelector('a[data-bs-toggle]');
-
-                        if(el_link != null){
-                            let nextEl = el_link.nextElementSibling;
-                            el_link.classList.add('show');
-                            nextEl.classList.add('show');
-                        }
-
-                    });
-                    everyitem.addEventListener('mouseleave', function(e){
-                        let el_link = this.querySelector('a[data-bs-toggle]');
-
-                        if(el_link != null){
-                            let nextEl = el_link.nextElementSibling;
-                            el_link.classList.remove('show');
-                            nextEl.classList.remove('show');
-                        }
-
-
-                    })
-                });
-
-            }
-            // end if innerWidth
-            }); 
-
-
-            /////////////////////////////////////////////////
-            // Pagination
-            // var requestOptions = {
-            // method: 'GET',
-            // redirect: 'follow'
-            // };
-
-            // fetch("http://127.0.0.1:8000/api/latest/post/e1/", requestOptions)
-            // .then(response => response.json())
-            // .then(result => {
-            //     if (result['links']['next'] != null){
-            //         console.log('pass')
-            //     };
-            // })
-            // .catch(error => console.log('error', error));
-
-
-
-
-
-            ///
-
-
-                
-
             
         </script>
 

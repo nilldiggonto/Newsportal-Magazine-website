@@ -1,0 +1,151 @@
+{% extends 'carrier/carrier_base.html' %}
+
+
+{%block content%}
+
+<div class="container">
+    <div class="p-5 text-center">
+        Welcome to The News Carrier Portal
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <h5 class="p-2 text-center bg-dark text-white">Your Posts</h5>
+            <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">First</th>
+                    <th scope="col">Last</th>
+                    <th scope="col">Handle</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td colspan="2">Larry the Bird</td>
+                    <td>@twitter</td>
+                  </tr>
+                </tbody>
+              </table>
+        </div> <!--col-md-8-->
+        <div class="col-md-4">
+            <h5 class="p-2 text-center bg-dark text-white">Most Viewd Post</h5>
+
+            <div class="row g-1">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
+
+                            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, alias.</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr> -->
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
+
+                            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, alias.</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr> -->
+
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
+
+                            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, alias.</h6>
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr> -->
+            </div>
+
+        </div>
+    </div> <!--row-->
+
+
+    <div class="row mt-4 g-1">
+        <div class="col-6">
+            <h5 class="p-2 text-center bg-dark text-white">Recent comments</h5>
+
+            <div class="card">
+                <div class="card-body">
+                    <figure>
+                        <blockquote class="blockquote">
+                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                          Someone famous in <cite title="Source Title">Source Title</cite>
+                        </figcaption>
+                      </figure>
+                      <hr>
+
+                      <figure>
+                        <blockquote class="blockquote">
+                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                          Someone famous in <cite title="Source Title">Source Title</cite>
+                        </figcaption>
+                      </figure>
+
+                      <hr>
+
+                      <figure>
+                        <blockquote class="blockquote">
+                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        
+                        </blockquote>
+                        <figcaption class="blockquote-footer">
+                          Someone famous in <cite title="Source Title">Source Title</cite>
+                        </figcaption>
+                      </figure>
+
+                </div>
+            </div>
+        </div> <!--col-6-->
+
+        <div class="col-6">
+            <h5 class="p-2 text-center bg-dark text-white">Pending Post</h5>
+
+            <div class="row g-1">
+                <div class="col">
+                    <div class="card-body d-flex">
+                        <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
+                        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ipsum!
+                            <br>
+                            Created at
+                            <br>
+                            category
+                        </span>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{%endblock%}

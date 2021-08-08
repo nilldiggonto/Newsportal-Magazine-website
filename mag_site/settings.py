@@ -27,6 +27,7 @@ INSTALLED_APPS = [
     'news_app',
     'rest_framework',
     'accounts',
+    'carrier_admin',
 
     #all auth
     # 'django.contrib.sites',

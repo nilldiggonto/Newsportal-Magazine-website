@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
 
     'news_app',
     'rest_framework',
@@ -30,14 +32,13 @@ INSTALLED_APPS = [
     'carrier_admin',
 
     #all auth
-    # 'django.contrib.sites',
 
     # 'allauth',
     # 'allauth.account',
     # 'allauth.socialaccount',
 ]
 
-# SITE_ID = 1
+SITE_ID = 2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -76,14 +77,14 @@ WSGI_APPLICATION = 'mag_site.wsgi.application'
 
 
 
-AUTHENTICATION_BACKENDS = [
+# AUTHENTICATION_BACKENDS = [
 
-    'django.contrib.auth.backends.ModelBackend',
+#     'django.contrib.auth.backends.ModelBackend',
 
-    # `allauth` specific authentication methods, such as login by e-mail
-    'allauth.account.auth_backends.AuthenticationBackend',
+#     # `allauth` specific authentication methods, such as login by e-mail
+#     'allauth.account.auth_backends.AuthenticationBackend',
 
-]
+# ]
 # Database
 
 

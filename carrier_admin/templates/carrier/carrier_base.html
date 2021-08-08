@@ -25,12 +25,24 @@
        <div class="container">
         <div class="d-flex justify-content-between">
           <div>
-            <a href="#">Profile</a>
-            <a href="#">Logout</a>
+            <!-- <a href="#">Profile</a>
+            <a href="#">Logout</a> -->
+            <a  class="text-white me-2"  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+              <i class="uil uil-align-alt"></i>
+              </a>
+
         </div>
           <div>
-              <a  class="text-white"  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                <i class="uil uil-align-alt"></i>
+            <a href="{% url 'home-page' %}" class="text-white me-2">
+              <i class="uil uil-estate"></i>
+            </a>
+               
+                <a href="#" class="text-white me-2">
+                  <i class="uil uil-envelope"></i>
+                </a>
+
+                <a href="{% url 'auth-logout' %}" class="text-white me-2">
+                  <i class="uil uil-sign-out-alt"></i>
                 </a>
           </div>
 
@@ -47,7 +59,11 @@
       
       <div class="offcanvas offcanvas-start" style="width: 300px;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasExampleLabel">The News Carrier</h5>
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+            <a class="text-dark" href="{% url 'home-page' %}">
+              The News Carrier
+            </a>
+          </h5>
          
           <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
@@ -86,6 +102,7 @@
           </div> -->
 
           <div class="list-group">
+            <!-- <a href="#"></a> -->
             <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">
               <i class="uil uil-plus-square"></i> Create Post</a>
             <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a>

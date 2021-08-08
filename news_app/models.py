@@ -13,6 +13,7 @@ class PostCategory(models.Model):
     category    =   models.CharField(max_length=20,unique=True)
     slug        = models.SlugField(max_length=300,unique=True,null=True,blank=True)
     rank        =   models.IntegerField(default=1)
+    icon        =   models.CharField(null=True,blank=True,max_length=250)
     active      =   models.BooleanField(default=True)
     created_at  =   models.DateTimeField(auto_now=True)
     updated_at  =   models.DateTimeField(auto_now_add=True)
@@ -34,6 +35,8 @@ class PostSubCategory(models.Model):
     category    =   models.ForeignKey(PostCategory,related_name='subcategory',on_delete=models.CASCADE)
     slug        =   models.SlugField(max_length=300,unique=True,null=True,blank=True)
     sub_name    =   models.CharField(max_length=20)
+    icon        =   models.CharField(null=True,blank=True,max_length=250)
+
     rank        =   models.IntegerField(default=1)
     featured    =   models.BooleanField(default=False)
     active      =   models.BooleanField(default=True)

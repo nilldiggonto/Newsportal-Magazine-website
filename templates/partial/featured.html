@@ -1,4 +1,4 @@
-<div id="feature" class="d-none d-md-block">
+<div id="feature" class="">
     <div class="container mt-4">
         <div class="row g-1">
             <content class="col-md-4">
@@ -7,10 +7,10 @@
                     <div class="carousel-inner">
 
                         {%for f in featured %}
-                      <div class="carousel-item {%if forloop.counter == 1 %} active {%endif%}" data-bs-interval="10000">
-                        <div class="card">
+                      <div class="carousel-item {%if forloop.counter == 1 %} active {%endif%}" data-bs-interval="5000">
+                        <div class="card border-0">
                             <div>
-                                <img  src="{{f.intro_image.url}}" alt=""  style="width: 100%; height:466px; object-fit:cover;">
+                                <img  src="{{f.intro_image.url}}" alt=""  style="width: 100%; height:142px; object-fit:cover;">
                             </div>
                             <div class="card-body">
                                 <h5>{{f.title}}</h5>
@@ -18,8 +18,10 @@
                                 <h6>Posted at 6am</h6>
 
                                 <p>
+                                    <!-- এই বইটি আমি পড়তে এবং কথা বলতে পছন্দ করি এই বইটি আমি পড়তে এবং কথা বলতে পছন্দ করি
+                                    এই বইটি আমি পড়তে এবং কথা বলতে পছন্দ করি -->
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, illum? Harum nam sit voluptates asperiores.
-                                    <span><a href="#">Read More</a></span>
+                                    <span><a href="{{f.get_absolute_url}}">Read More</a></span>
                                 </p>
                             </div>
                         </div>
@@ -66,8 +68,9 @@
           <div class="col-md-8">
               <div class="row g-1">
                   {%for f in featured %}
+                  {% if forloop.counter < 4 %}
                 <content class="col-md-4" >
-                    <div class="card">
+                    <div class="card border-0">
                         <div>
                             <img  src="{{f.intro_image.url}}" alt=""  style="width: 100%; height:100px; object-fit:cover;">
                         </div>
@@ -79,7 +82,7 @@
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, illum? Harum nam sit voluptates asperiores....
                                 <br>
-                                <span><a href="#">Read More</a></span>
+                                <span><a href="{{f.get_absolute_url}}">Read More</a></span>
 
                             </p>
                         </div>
@@ -99,6 +102,7 @@
                     </figure>
              -->
                 </content>
+                {%endif%}
                 {% endfor%}
 
                 <!-- <content class="col-md-6">

@@ -121,7 +121,7 @@
 
 {%block content%}
 
-<div id="category-page" class="d-none d-md-block mt-2">
+<!-- <div id="category-page" class="d-none d-md-block mt-2">
     <div class="container">
      <ol class="breadcrumb">
          <li class="breadcrumb-item"><a href="{%url 'home-page' %}">Home</a></li>
@@ -130,19 +130,22 @@
        </ol>
     </div>
      
- </div>
+ </div> -->
 
  <div id="single-page" class="mb-4">
      <div class="container">
-        <h4 class="p-2"><strong>{{obj.scategory}}</strong></h4>
+        <!-- <h4 class="p-2"><strong>{{obj.scategory}}</strong></h4> -->
 
         <div class="row mt-4">
             <div class="col-md-8">
             <h4><b>{{obj.title}}</b></h4>
-            <span>written by:nill feb 19 | views:1231 | 0 comment</span>
+            <span<i class="uil uil-edit"></i>written by:nill |
+            <i class="uil uil-calendar-alt"></i>feb 19 | 
+            <i class="uil uil-eye"></i>views:1231 | 
+            <i class="uil uil-comments-alt"></i>comments:0</span>
 
             <div class="mt-2">
-            <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: contain;" alt="">
+            <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: cover;" alt="">
 
             </div>
 

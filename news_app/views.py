@@ -102,7 +102,7 @@ def category_page(request,slug):
     postcategory = PostCategory.objects.all()
     template_name = 'pages/category.html'
     all_cat = PostSubCategory.objects.filter(category=obj.category)
-    print(all_cat)
+    # print(all_cat)
     context = {
         "obj":obj,
         'postcategory':postcategory,

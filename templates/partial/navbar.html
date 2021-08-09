@@ -1,7 +1,7 @@
 
 <!-- { postcategory}} -->
-<div class="container d-md-none mb-5" >
-    <!--for mobile-->
+<!-- <div class="container d-md-none mb-5" >
+ 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary  fixed-top" >
     <div class="container-fluid">
       <a class="navbar-brand" href="#">The <b>News <sup><i class="uil uil-tornado"></i></sup></b></span>Carrier</a>
@@ -31,7 +31,7 @@
       </div>
     </div>
   </nav>
-</div>
+</div> -->
 
 <!--======-->
 
@@ -41,7 +41,7 @@
 
 <!--==================================-->
 
-<div id="navigation" class=" d-none d-md-block fixed-top" style="background-color:#fafafa;">
+<div id="navigation" class="  d-md-block fixed-top" style="background-color:#fafafa;">
     <div class=" mt-2">
 
       <div id="brand" >
@@ -70,9 +70,9 @@
                     <div class="container mb-4 mt-4">
                       <div class="row g-1">
                         {% for scat in cat.subcategory.all %}
-                        <div class="col-2">
-                          <a href="#" class="text-decoration-none text-dark">
-                            <div class="text-center">
+                        <div class="col-2  hover-content" >
+                          <a href="{{scat.get_absolute_url}}" class="text-decoration-none text-dark">
+                            <div class="text-center ">
                               <h3><i class="{{scat.icon}}"></i></h3>
                               <h6>{{scat.sub_name}}</h6>
                               

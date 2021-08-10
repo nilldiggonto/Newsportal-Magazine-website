@@ -119,12 +119,16 @@ def single_page(request,slug):
     # sub_category = PostSubCategory.objects.get()
     related_post = Post.objects.filter(slug=slug)
 
+    all_cat = PostSubCategory.objects.filter(category=obj.scategory.category)
+
+
 
     # print(slug)
     context = {
        
         'postcategory':postcategory,
-        'obj':obj
+        'obj':obj,
+        'all_cat':all_cat
         
     }
     return render(request,template_name,context=context)

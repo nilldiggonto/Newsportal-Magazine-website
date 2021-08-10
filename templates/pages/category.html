@@ -8,20 +8,7 @@
 
 <style>
             /* [1] The container */
-        .img-hover-zoom {
-        height: 200px; /* [1.1] Set it as per your need */
-        overflow: hidden; /* [1.2] Hide the overflowing of child elements */
-        }
-
-        /* [2] Transition property for smooth transformation of images */
-        .img-hover-zoom img {
-        transition: transform .5s ease;
-        }
-
-        /* [3] Finally, transforming the image when container gets hovered */
-        .img-hover-zoom:hover img {
-        transform: scale(1.5);
-        }
+        
 </style>
 
 {%endblock style%}
@@ -185,7 +172,7 @@
                         <div data-aos="fade-down-right" class="col-md-6 mb-1">
                         <div class="card border-0">
                             <div class="card-body">
-                               <a href="" class="text-decoration-none text-dark">
+                               <a href="${item.get_absolute_url}" class="text-decoration-none text-dark">
                                 <div class="img-hover-zoom">
                                     <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
     
@@ -237,7 +224,7 @@
                         <div data-aos="fade-down-right" class="col-md-6 mb-1">
                         <div class="card border-0">
                             <div class="card-body">
-                               <a href="" class="text-decoration-none text-dark">
+                               <a href="${item.get_absolute_url}" class="text-decoration-none text-dark">
                                 <div class="img-hover-zoom">
                                     <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
     

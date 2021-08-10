@@ -100,7 +100,7 @@
     font-weight: 400;
     color: #b4b7c1;
     width: 100%;
-    height: 50px;
+    height: 30px;
     padding-left: 20px;
     padding-right: 20px;
     border: 1px solid #edeff2;
@@ -112,8 +112,9 @@
 }
 
 .form-group textarea.form-input {
-    height: 150px;
+    height: 100px;
 }
+/* ========================================= */
 
 </style>
 
@@ -136,7 +137,7 @@
      <div class="container">
         <!-- <h4 class="p-2"><strong>{{obj.scategory}}</strong></h4> -->
 
-        <div class="row mt-4">
+        <div class="row mt-4 g-2">
             <div class="col-md-8">
             <h4><b>{{obj.title}}</b></h4>
             <span<i class="uil uil-edit"></i>written by:nill |
@@ -144,7 +145,7 @@
             <i class="uil uil-eye"></i>views:1231 | 
             <i class="uil uil-comments-alt"></i>comments:0</span>
 
-            <div class="mt-2">
+            <div class="mt-2 mb-4">
             <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: cover;" alt="">
 
             </div>
@@ -168,12 +169,11 @@
             </div>
 
             <div class="mt-1">
-                Share:
-                <a class="btn btn-info" href="">Fb</a>
-                <a class="btn btn-info" href="">Fb</a>
-                <a class="btn btn-info" href="">Fb</a>
-                <a class="btn btn-info" href="">Fb</a>
-
+                <i class="uil uil-share"></i> Share:
+                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
+                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
+                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
+                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
             </div>
 
 
@@ -182,25 +182,36 @@
 
 
                 <figure class="text-end">
-                    <blockquote class="blockquote">
-                      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <blockquote class="blockquote" style="font-size: medium;">
+                      <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                     
                     </blockquote>
                     <figcaption class="blockquote-footer">
                       Someone famous in <cite title="Source Title">Source Title</cite>
                     </figcaption>
                   </figure>
-
 
                   <figure class="text-end">
-                    <blockquote class="blockquote">
-                      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <blockquote class="blockquote" style="font-size: medium;">
+                      <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
                     
                     </blockquote>
                     <figcaption class="blockquote-footer">
                       Someone famous in <cite title="Source Title">Source Title</cite>
                     </figcaption>
                   </figure>
+
+                  <figure class="text-end">
+                    <blockquote class="blockquote" style="font-size: medium;">
+                      <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    
+                    </blockquote>
+                    <figcaption class="blockquote-footer">
+                      Someone famous in <cite title="Source Title">Source Title</cite>
+                    </figcaption>
+                  </figure>
+
+
 
 
                   <form class="form-block">
@@ -219,10 +230,10 @@
                         </div> -->
                         <div class="col-xs-12">									
                             <div class="form-group">
-                                <textarea class="form-input" required="" placeholder="Your text"></textarea>
+                                <textarea class="form-input" required="" placeholder="Your text" rows="3"></textarea>
                             </div>
                         </div>
-                        <a class="btn btn-primary pull-right">submit</a>
+                        <a class="d-inline btn btn-outline-two btn-sm ">Comment</a>
                     </div>
                 </form>
             </div>
@@ -230,37 +241,61 @@
             
             </div> <!--.col-md-8-->
 
-            <div class="col-md-4">
-                <div class="p-2 border bg-one text-white">
-                    <h6>Category | {{obj.category}}</h6>
+            <div class="col-md-4" style="margin-top: 6%;">
+                <div class="p-2 border bg-two text-white">
+                    <!-- <h6>Category | {{obj.scategory.category}}</h6> -->
+                    <h6><i class="uil uil-dice-four"></i> Related Category</h6>
                 </div>
 
 
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action ">Cras justo odio</a>
-                    <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus</a>
+                <div class="list-group mt-1">
+                    {%for sub in all_cat %}
+                        {% if not sub.sub_name == obj.scategory %}
+                    <a href="{{sub.get_absolute_url}}" class="list-group-item list-group-item-action mb-1 border">
+                       <i class="{{sub.icon}}"></i> {{sub.sub_name}}</a>
+                        {%endif%}
+                    {%endfor%}
+                    
                   </div>
 
 
                   
-            <div class="p-2 border bg-one text-white mt-4">
-                <h6>Related Post</h6>
+            <div class="p-2 border bg-two text-white mt-4">
+                <h6><i class="uil uil-wall"></i> Related News</h6>
             </div>
             <div class="row g-1">
 
                 {% for item in obj.scategory.post.all %}
 
                     {%if not item.slug == obj.slug %}
-                <div class="col-6">
+                  <div class="col-md-6">
+                    <figure >
+                        <img src="{{item.intro_image.url}}"  class="img-fluid img-rounded" valign="absmiddle" style="height:100px;object-fit:cover;" />
+                        <!-- <h4 class="p-2">{{item.title}}</h4> -->
+                        <div class="overlay">
+                            <div class="description">
+                                <a href="{{item.get_absolute_url}}" style="text-decoration: none; color: aliceblue;">
+                                    <p>{{item.title}}</p>
+                                    <!-- <p>{{f.created_at}}</p> -->
+                                </a>
+                            </div>
+                        </div>
+                    </figure>
+                  </div>
+                <!-- <div class="col-6">
                     <a href="{{item.get_absolute_url}}">
                        
+               <div class="img-hover-zoom">
                 <img src="{{item.intro_image.url}}" style="width:100%; height: 100px; object-fit: cover;" alt="">
+               </div>
 
                     </a>
-                </div>
+                </div> -->
                     {%endif%}
                 {% endfor%}
+
+
+               
 
              
             </div>

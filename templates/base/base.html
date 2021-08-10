@@ -74,6 +74,22 @@
         transition: 0.3s;
     }
 
+
+    .img-hover-zoom {
+        height: 200px; /* [1.1] Set it as per your need */
+        overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+        }
+
+        /* [2] Transition property for smooth transformation of images */
+        .img-hover-zoom img {
+        transition: transform .5s ease;
+        }
+
+        /* [3] Finally, transforming the image when container gets hovered */
+        .img-hover-zoom:hover img {
+        transform: scale(1.5);
+        }
+
       
 
         
@@ -82,8 +98,49 @@
             position: static !important;
         } */
 
+                #mySidenavtwo span {
+                position: fixed;
+                /* left: -20%; */
+                /* height: 20px; */
+                transition: 0.3s;
+                padding: 5px;
+                width: 45%;
+                text-decoration: none;
+                font-size: 12px;
+                
+                color: rgb(252, 252, 252);
+                /* border-radius: 0 5px 5px 0; */
+                /* background-color: #9f1239; */
+                z-index: 1111;
+                margin-top: 3px;
+                
+                /* margin-top: -9%; */
+                /* margin-top: 15%; */
+                /* top:300px; */
+                }
 
-        
+                a{
+                    text-decoration: none;
+                }
+
+
+                #trend{
+                margin-top: 10%;
+                }
+
+
+                @media all and (max-width: 800px) {
+
+                    #trend{
+                        margin-top: 30%;
+                        }
+
+                    }	
+
+               
+
+                
+                       
     </style>
 
 
@@ -95,6 +152,23 @@
 
 </head>
 <body>
+
+    <div id="mySidenavtwo" class="sidenav">
+        <span class="text-dark">
+            <!-- <i class="uil uil-user-plus"></i> -->
+        <a href="#" class="text-dark"> <i class="uil uil-user-plus"></i>register</a> |
+        <a href="#" > <i class="uil uil-unlock"></i>login</a>
+
+        </span> |
+
+        <!-- <span id="blog">
+           
+    
+            </span> -->
+        <!-- <a href="#" id="blog">Blog</a> -->
+        <!-- <a href="#" id="projects">Projects</a> -->
+        <!-- <a href="#" id="contact">Contact</a> -->
+    </div>
 
     <!--UPPER HEAD-->
     <!-- <div class="p-3 bg-one text-white d-none d-md-block">
@@ -125,6 +199,8 @@
 
 
     <!----------------------------------->
+            
+     
 
 
     <!---====================================-->
@@ -135,10 +211,10 @@
 
     <!--===============BREAKING NEWS ===============-->
 
-    <div id="trend" style="margin-top: 10%;" >
+    <div id="trend" >
         <div class="container mt-2">
            <div class="row">
-            <div class="col-md-9 col-12">
+            <div class="col-md-9 col-12 d-none d-md-block">
                 <div class="onoffswitch3">
                     <input type="checkbox" name="onoffswitch3" class="onoffswitch3-checkbox" id="myonoffswitch3" checked>
                     <label class="onoffswitch3-label" for="myonoffswitch3">
@@ -173,6 +249,9 @@
            </div>
         </div>
     </div>
+
+
+    
 
    {%block content%}
 

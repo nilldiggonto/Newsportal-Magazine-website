@@ -8,3 +8,6 @@ from django.contrib.auth.decorators import login_required
 def admin_home(request):
     template_name = 'carrier/carrier_home.html'
     return render(request,template_name,{})
+
+# @login_required(login_url='/auth/login/')
+# def 

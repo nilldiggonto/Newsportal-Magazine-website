@@ -3,30 +3,68 @@
 
 {%block content%}
 
-<div class="container">
-    <div class="row g-0">
-        <div class="col-md-6" style="margin-top:15%">
+<div class="container border p-4 bg-three text-white" style="margin-top:5%; border-radius:15px">
 
-            <div class="text-center">
+    <div class="row g-3">
+        <div class="col-md-6 d-none d-md-block" style="margin-top:10% ;" >
+
+            <div class="text-center ">
+                <h3><i class="uil uil-tornado"></i></h3>
                 <h4>The News Carrier</h4>
                 <p class="lead">Welcome</p>
             </div>
 
         </div>
-        <div class="col-md-6 align-middle" style="margin-top:15% ">
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
+        <div class="col-md-6 align-middle border-start" >
+            <h3 class="text-center">The News <sup><i class="uil uil-tornado"></i></sup> Carrier</h3>
+            <h4 class="text-center"><i class="uil uil-user-plus"></i> register</h4>
+            <!-- <hr> -->
+            <form method="POST" class="p-2 row g-3">
+                {%csrf_token%}
+                <div class=" col-md-6">
+                    <label for="fname" class="form-label"><i class="uil uil-edit-alt"></i> first name</label>
+                    <input type="text" class="form-control" id="fname" placeholder="First Name" name="fname" required>
+                    
+                  </div>
 
-              <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">password</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-              </div>
+                  <div class=" col-md-6">
+                    <label for="lname" class="form-label"><i class="uil uil-edit-alt"></i> last name</label>
+                    <input type="text" class="form-control" id="lname" placeholder="lname" name="lname" required>
+                  </div>
 
-              <div class="mb-3 d-grid gap-2">
-                  <button class="btn btn-info btn-sm">Login</button>
-              </div>
+                  <div class=" col-md-12">
+                    <label for="email" class="form-label"><i class="uil uil-envelope-shield"></i> email</label>
+                    <input type="email" class="form-control" id="remail" placeholder="you@mail.com" name="email" required>
+                    <div class="">
+                       {% if not valid %}
+                       Email already exists. login please
+                       {%endif%}
+                      </div>
+                  </div>
+
+                  <!-- <div class="col-md-12">
+                    <label for="username" class="form-label"><i class="uil uil-user"></i> username</label>
+                    <input type="text" class="form-control" id="username" placeholder="username" name="username">
+                  </div> -->
+    
+                  <div class="col-md-12">
+                    <label for="password" class="form-label"><i class="uil uil-key-skeleton-alt"></i> password</label>
+                    <input type="password" class="form-control" id="password" placeholder="password" name="password" required>
+                  </div>
+    
+                  <div class="text-end">
+                      <button style="width: 20%;" class="btn btn-dark btn-sm"><i class="uil uil-telegram-alt"></i> register</button>
+                  </div>
+            </form>
+
+            <div class="d-flex justify-content-between">
+                <!-- <span><i class="uil uil-exclamation-octagon"></i> forget password</span> -->
+                <span><i class="uil uil-exclamation-triangle"></i> already have and account?
+                    
+                    <a href="{% url 'auth-login' %}" class="text-success"><i class="uil uil-accessible-icon-alt"></i> login now</a>
+                </span>
+                <!-- <span><i class="uil uil-user-plus"></i> login now</span> -->
+            </div>
               
         </div>
     </div>

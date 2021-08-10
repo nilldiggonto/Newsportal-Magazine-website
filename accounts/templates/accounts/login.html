@@ -3,40 +3,43 @@
 
 {%block content%}
 
-<div class="container border p-4" style="margin-top:8%; border-radius:15px">
+<div class="container border p-4 bg-three text-white" style="margin-top:8%; border-radius:15px">
 
     <div class="row g-3">
-        <div class="col-md-6 d-none d-md-block" style="margin-top:13% ;" >
+        <div class="col-md-6 d-none d-md-block" style="margin-top:10% ;" >
 
             <div class="text-center ">
+                <h3><i class="uil uil-tornado"></i></h3>
                 <h4>The News Carrier</h4>
                 <p class="lead">Welcome</p>
             </div>
 
         </div>
         <div class="col-md-6 align-middle border-start" >
-            <h3 class="text-center">The News Carrier</h3>
-            <h4 class="text-center">Login Now</h4>
+            <h3 class="text-center">The News <sup><i class="uil uil-tornado"></i></sup> Carrier</h3>
+            <h4 class="text-center">Login</h4>
             <form method="POST" class="p-2">
                 {%csrf_token%}
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label"><i class="uil uil-user"></i> username</label>
                     <input type="text" class="form-control" id="username" placeholder="username" name="username">
                   </div>
     
                   <div class="mb-3">
-                    <label for="password" class="form-label">password</label>
+                    <label for="password" class="form-label"><i class="uil uil-key-skeleton-alt"></i> password</label>
                     <input type="password" class="form-control" id="password" placeholder="password" name="password">
                   </div>
     
-                  <div class="mb-3 d-grid gap-2">
-                      <button class="btn btn-info btn-sm">Login</button>
+                  <div class="text-end">
+                      <button style="width: 20%;" class="btn btn-dark btn-sm"><i class="uil uil-telegram-alt"></i> login</button>
                   </div>
             </form>
 
             <div class="d-flex justify-content-between">
-                <span>forget password</span>
-                <span>Create new account</span>
+                <span><i class="uil uil-exclamation-octagon"></i> forget password</span>
+                <span><i class="uil uil-user-plus"></i> 
+                    <a href="{%url 'auth-register' %}">create new account</a>
+                </span>
             </div>
               
         </div>

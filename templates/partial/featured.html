@@ -75,8 +75,11 @@
                             <img  src="{{f.intro_image.url}}" alt=""  style="width: 100%; height:100px; object-fit:cover;">
                         </div>
                         <div class="card-body">
-                            <span  class="border px-1">{{f.scategory}}</span>
-                            <h6>{{f.title}}</h6>
+                            <a href="{{f.get_absolute_url}}" class="text-dark">
+                                <span  class="border px-1">{{f.scategory}}</span>
+                                <br>
+                            <span>{{f.title}}</span>
+                            </a>
                            
                             <!-- <h6>
                                 <span><a href="{{f.get_absolute_url}}">Read More</a></span>

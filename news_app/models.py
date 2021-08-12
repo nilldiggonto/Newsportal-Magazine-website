@@ -3,7 +3,7 @@ from django.db.models.signals import pre_save
 from django.utils.text import slugify
 from .utils import unique_slugify
 from django.urls import reverse
-
+from django.contrib.auth.models import User
 
 
 # def getcurrentusername(instance, filename):
@@ -57,6 +57,8 @@ class PostSubCategory(models.Model):
 
 class Post(models.Model):
 
+    author               = models.ForeignKey(User,related_name='user_post',on_delete=models.CASCADE)
+
     scategory           =   models.ForeignKey(PostSubCategory,related_name='post',on_delete=models.CASCADE)
     title               =   models.CharField(max_length=200)
     intro_image         =   models.ImageField(upload_to='content/',null=True,blank=True)
@@ -73,6 +75,7 @@ class Post(models.Model):
 
     primary_featured    =   models.BooleanField(default=False)
     popular             =   models.BooleanField(default=False)
+    view_count          =   models.BigIntegerField(default=0)
 
     featured            =   models.BooleanField(default=False)
     active              =   models.BooleanField(default=False)

@@ -116,8 +116,13 @@ def single_page(request,slug):
 
     postcategory = PostCategory.objects.all()
     obj = get_object_or_404(Post, slug=slug)
-    # sub_category = PostSubCategory.objects.get()
     related_post = Post.objects.filter(slug=slug)
+
+    # if obj:
+    if obj:
+        obj.view_count = int(obj.view_count) + 1
+        obj.save()
+    # sub_category = PostSubCategory.objects.get()
 
     all_cat = PostSubCategory.objects.filter(category=obj.scategory.category)
 

@@ -15,29 +15,29 @@
                 <thead>
                   <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">title</th>
+                    <th scope="col">category</th>
+                    <th scope="col">comments</th>
+                    <th scope="col">views</th>
+                    <th scope="col">created time</th>
+                    <th scope="col">#</th>
+
+
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                  {% for post in posts %}
+                  <tr class="text-center">
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{post.title}}</td>
+                    <td>{{post.scategory}}</td>
+                    <td>5</td>
+                    <td>{{post.view_count}}</td>
+                    <td>{{post.created_at | timesince}}</td>
+                    <td><a href="#">Link</a></td>
+
                   </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                  </tr>
+                  {% endfor%}
                 </tbody>
               </table>
         </div> <!--col-md-8-->

@@ -9,7 +9,12 @@ from news_app.models import PostSubCategory,Post
 @login_required(login_url='/auth/login/')
 def admin_home(request):
     template_name = 'carrier/carrier_home.html'
-    return render(request,template_name,{})
+    posts = Post.objects.filter(author=request.user)
+
+    context = {
+        'posts':posts
+    }
+    return render(request,template_name,context)
 
 @login_required(login_url='/auth/login/')
 def create_post(request):
@@ -28,8 +33,9 @@ def create_post(request):
 
         description = request.POST.get('description')
         cat = PostSubCategory.objects.get(sub_name=cats)
+        user = request.user
 
-        Post.objects.create(scategory=cat,title=title,summary_one=description,intro_image=pic)
+        Post.objects.create(author=user,scategory=cat,title=title,summary_one=description,intro_image=pic)
         return redirect('dashboard-home')
 
 

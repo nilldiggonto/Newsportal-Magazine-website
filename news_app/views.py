@@ -69,8 +69,8 @@ def homepage(request):
     postcategory = PostCategory.objects.all()
     subcategory = PostSubCategory.objects.all()
     primary_featured = Post.objects.filter(primary_featured=True).order_by('-id')[0]
-    featured_home = Post.objects.filter(featured=True)[:4]
-    all_post = Post.objects.filter(active=True)[:5]
+    featured_home = Post.objects.filter(featured=True)
+    all_post = Post.objects.filter(active=True)
     popular_post = Post.objects.filter(active=True,popular=True)
     featured_category = PostSubCategory.objects.filter(featured=True)
 

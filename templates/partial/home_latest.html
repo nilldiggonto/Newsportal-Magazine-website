@@ -12,7 +12,7 @@
                      <div class="row mt-2" id="loadDiv" >
                         {%for p in all_post%}
                          <div class="col-12 mb-1" >
-                           <div class="card">
+                           <div class="card border-0">
                               <a href="{{p.get_absolute_url}}" class="text-decoration-none text-dark">
                                 <div class="card-body d-flex">
                                   <div >
@@ -24,7 +24,7 @@
                                       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem neque odio voluptatem nihil, laborum accusamus?....
                                          <span class="text-info">Read more<i class="uil uil-arrow-right"></i></span></p>
                                       <!-- <span class="border p-1">{{p.scategory}}</span> -->
-                                      <p class="p-1">by that artist</p>
+                                      <!-- <p class="p-1">by that artist</p> -->
                                   </div>
                                  </div>
                               </a>
@@ -55,8 +55,8 @@
                                
                               <a href="{{popular.get_absolute_url}}" class="text-decoration-none text-dark">
                               <div class="d-flex justify-content-between">
-                                <span class="badge bg-primary badge-pill">{{forloop.counter}}</span>
-                               <span> {{popular.title}} <i class="uil uil-directions"></i></span>
+                                <!-- <span class="badge bg-primary badge-pill">{{forloop.counter}}</span> -->
+                               <span><i class="uil uil-directions"></i> {{popular.title}} </span>
                               </div>
                               </a>
                               

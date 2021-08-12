@@ -10,7 +10,7 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&display=swap');
       
@@ -49,6 +49,10 @@
             <a href="#">Logout</a> -->
             <a  class="text-white me-2"  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
               <i class="uil uil-align-alt"></i> Dashboard
+              </a>
+
+              <a href="{% url 'dashboard-home' %}" class="text-white me-2">
+                <i class="uil uil-estate"></i> home
               </a>
 
         </div>
@@ -92,13 +96,13 @@
         <div class="offcanvas-body">
           <div class="d-flex ">
           <div>
-            <img src="" style="border-radius: 50%; width: 50px; height: 50px; object-fit: contain;"  alt="">
+            <img src="https://images.unsplash.com/photo-1505771215590-c5fa0aec29b8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80" style="border-radius: 50%; width: 50px; height: 50px; object-fit: contain;"  alt="">
           </div>
 
           <div class="ms-4">
-            <span>Moinul Islam</span>
+            <span>{{request.user.first_name}} {{request.user.last_name}}</span>
             <br>
-            <span>Email:hant</span>
+            <span>Email:{{request.user.username}}</span>
           </div>
           
           
@@ -106,7 +110,7 @@
 
           </div>
             <div class="text-center mt-3">
-              <a href="#" class="btn btn-sm btn-danger" style="width: 50%;">Logout</a>
+              <a href="{% url 'auth-logout' %}" class="btn btn-sm btn-danger" style="width: 50%;">Logout</a>
             </div>
           <hr>
           <!--nav button-->
@@ -125,9 +129,10 @@
             <!-- <a href="#"></a> -->
             <a style="border: none;" href="{% url 'dashboard-post-create' %}" class="p-2 mb-2 list-group-item list-group-item-action ">
               <i class="uil uil-plus-square"></i> Create Post</a>
-            <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a>
-            <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a>
-            <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a>
+            <a style="border: none;" href="{%url 'dashboard-request-post' %}" class="p-2 mb-2 list-group-item list-group-item-action ">
+              <i class="uil uil-mailbox"></i> Post Request</a>
+            <!-- <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a>
+            <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a> -->
 
             <!-- <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
             <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus</a> -->
@@ -149,6 +154,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
 
     <script>
       

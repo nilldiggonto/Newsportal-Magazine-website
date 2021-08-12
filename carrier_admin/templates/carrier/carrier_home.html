@@ -4,14 +4,14 @@
 {%block content%}
 
 <div class="container">
-    <div class="p-5 text-center">
-        Welcome to The News Carrier Portal
+    <div class="mt-5 p-3 text-center">
+        <h4>Welcome to The News Carrier Portal</h4>
     </div>
 
     <div class="row g-1">
         <div class="col-md-8">
-            <h5 class="p-2  bg-four text-white">Your Posts</h5>
-            <table class="table table-bordered">
+            <h6 class="p-2  bg-four text-white">Your Posts</h6>
+            <table class="table table-bordered" id="myTable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -20,62 +20,76 @@
                     <th scope="col">comments</th>
                     <th scope="col">views</th>
                     <th scope="col">created time</th>
-                    <th scope="col">#</th>
+                    <th scope="col">view</th>
 
 
                   </tr>
                 </thead>
                 <tbody>
                   {% for post in posts %}
+                  {% if forloop.counter < 6 %}
                   <tr class="text-center">
                     <th scope="row">{{forloop.counter}}</th>
                     <td>{{post.title}}</td>
-                    <td>{{post.scategory}}</td>
+                    <td><i class="{{post.scategory.icon}}"></i> <br>{{post.scategory}}</td>
                     <td>5</td>
                     <td>{{post.view_count}}</td>
-                    <td>{{post.created_at | timesince}}</td>
-                    <td><a href="#">Link</a></td>
+                    <td>{{post.created_at | timesince}} ago</td>
+                    <td><a href="{{post.get_absolute_url}}" target="_blank"><i class="uil uil-expand-from-corner"></i></a></td>
 
                   </tr>
+                  {% endif%}
+
+                  
                   {% endfor%}
+           
                 </tbody>
               </table>
+
+              {%if  posts.count > 6 %}
+              <div class="text-center">
+                <a href="#" class="btn btn-outline-info btn-sm" style="width: 20%;">See All</a>
+              </div>
+              {%endif%}
         </div> <!--col-md-8-->
         <div class="col-md-4">
-            <h5 class="p-2  bg-dark text-white">Most Viewd Post</h5>
+            <h6 class="p-2  bg-dark text-white">Most Viewd Post</h6>
 
             <div class="row g-1">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
+              {% for m in most_view%}
+              {% if m.view_count > 0 and forloop.counter < 5 %}
+                <div class="col-md-12">
+                    <div class="card border-0">
+                      <!-- <div class="card-body d-flex">
+                        <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
+                        <span class="ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ipsum!
+                            <br>
+                            Created at
+                            <br>
+                            category
+                        </span>
+                        
+                    </div> -->
+                        <div class="card-body d-flex">
+                            <img style="width:100px; height:75px; object-fit: cover;" src="{{m.intro_image.url}}" alt="">
 
-                            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, alias.</h6>
+                            
+                            <div class="ps-1">
+                              <span>{{m.title}}</span>
+                              <br>
+                              <span class="border px-1">{{m.scategory}}</span>
+                              <br>
+                            <span><i class="uil uil-eye"></i> {{m.view_count}}</span>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
+                {%endif%}
+                {% endfor%}
                 <!-- <hr> -->
 
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
-
-                            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, alias.</h6>
-                        </div>
-                    </div>
-                </div>
-                <!-- <hr> -->
-
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body text-center">
-                            <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
-
-                            <h6>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima, alias.</h6>
-                        </div>
-                    </div>
-                </div>
+                
                 <!-- <hr> -->
             </div>
 
@@ -149,3 +163,15 @@
 </div>
 
 {%endblock%}
+
+{% block script %}
+
+
+<script>
+
+//   $(document).ready( function () {
+//     $('#myTable').DataTable();
+// } );
+</script>
+
+{% endblock script%}

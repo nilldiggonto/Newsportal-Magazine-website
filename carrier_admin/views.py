@@ -10,9 +10,10 @@ from news_app.models import PostSubCategory,Post
 def admin_home(request):
     template_name = 'carrier/carrier_home.html'
     posts = Post.objects.filter(author=request.user)
-
+    most_view = Post.objects.filter(author=request.user).order_by('-view_count')
     context = {
-        'posts':posts
+        'posts':posts,
+        'most_view':most_view
     }
     return render(request,template_name,context)
 
@@ -38,9 +39,13 @@ def create_post(request):
         Post.objects.create(author=user,scategory=cat,title=title,summary_one=description,intro_image=pic)
         return redirect('dashboard-home')
 
+    return render(request,template_name,context=context)
 
 
-
-    
-    
+def request_post(request):
+    template_name = 'carrier/request_post.html'
+    posts = Post.objects.filter(active=False)
+    context = {
+        'posts':posts,
+    }
     return render(request,template_name,context=context)

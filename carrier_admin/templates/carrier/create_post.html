@@ -29,16 +29,16 @@
                           </div>
 
                         <div class="col-md-12">
-                          <label for="title" class="form-label">title</label>
-                          <input type="text" class="form-control" id="newsTitle" name="title" required>
+                          <label for="title" class="form-label">title | <span id="charNum">0 characters</span></label>
+                          <input onkeyup="countChars(this,'charNum')"; maxlength="30" type="text" class="form-control" id="newsTitle" name="title" required>
                         </div>
                         <div class="col-md-12">
                           <label for="intro_image" class="form-label">picture</label>
                             <input type="file" class="form-control" id="introPic" name="pic" required>
                         </div>
                         <div class="col-12">
-                            <label for="intro" class="form-label">Introduction</label>
-                            <textarea class="form-control" id="post-intro" rows="3" placeholder="Brief about your article" name="intro"></textarea>
+                            <label for="intro" class="form-label">Introduction | <span id="charIntro">0 characters</span></label>
+                            <textarea onkeyup="countChars(this,'charIntro')"; maxlength="350" required class="form-control" id="post-intro" rows="3" placeholder="Brief about your article" name="intro"></textarea>
                         </div>
                         <div class="col-12">
                             <div id="postDescription" ></div>
@@ -89,6 +89,21 @@
         $("#identifier").on("submit",function(){
             $("#hiddenArea").val($("#postDescription .ql-editor").html());
             })
+
+            ///////////////////////////////////////////////////////
+            function countChars(obj,id){
+            var maxLength = 30;
+            if (id === "charIntro"){
+              maxLength = 350;
+            }
+            var strLength = obj.value.length;
+            
+            if(strLength > maxLength){
+                document.getElementById(id).innerHTML = '<span style="color: red;">'+strLength+' out of '+maxLength+' characters</span>';
+            }else{
+                document.getElementById(id).innerHTML = strLength+' out of '+maxLength+' characters';
+            }
+        }
 </script>
 
 {%endblock script%}

@@ -138,6 +138,16 @@
                 }
 
 
+                .text-truncate-container {
+                    width: 250px;
+                }
+                .text-truncate-container p {
+                    -webkit-line-clamp: 3;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                }
+
                 @media all and (max-width: 800px) {
 
                     #trend{
@@ -339,111 +349,129 @@
 
 
             /////////////////////////////////////////////////
-            let latesturl = "http://127.0.0.1:8000/api/latest/home/post/v1/" 
+                let latesturl = "http://127.0.0.1:8000/api/latest/home/post/v1/" 
 
 
                 //================================================================
 
-                // var requestOptions = {
-                //         method: 'GET',
-                //         redirect: 'follow'
-                //         };
+                var requestOptions = {
+                        method: 'GET',
+                        redirect: 'follow'
+                        };
 
-                //         fetch(latesturl, requestOptions)
-                //         .then(response => response.json())
-                //         .then(result => {
-                //             // console.log(result)
+                        fetch(latesturl, requestOptions)
+                        .then(response => response.json())
+                        .then(result => {
                             
-                //                 // console.log(result)
-                //                 latesturl = result['links']['next']
-                //                 myArray = result['results']
-                //                 myArray.forEach(function (item) {
+                            // console.log(result)
+                            
+                                // console.log(result)
+                                latesturl = result['links']['next']
+                                myArray = result['results']
+                                myArray.forEach(function (p) {
+                                    let mystring = p.intro
+                                    let mobile = mystring.substring(0,35);
+                                    let desktop = mystring.substring(0,150);
                                     
-                //                     document.getElementById("homeLatestPost").innerHTML += `
-                //                     <div data-aos="fade-down-right" class="col-md-12 mb-1">
-                //                     <div class="card border-0">
-                //                         <div class="card-body">
-                //                         <a href="${item.get_absolute_url}" class="text-decoration-none text-dark">
-                //                             <div class="img-hover-zoom">
-                //                                 <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
+                                    document.getElementById("homeLatestPost").innerHTML += `
+                                    <div data-aos="fade-down-left" class="col-12 mb-1 " >
+                           <div class="card border-0">
+                              <a href="${p.get_absolute_url}" class="text-decoration-none text-dark">
+                                <div class="card-body d-flex">
+                                  <div >
+                                      <img style="width: 150px; height: 100px; object-fit: cover;" src="${p.intro_image}" alt="this is image">
+                                  </div>
+      
+                                  <div style="margin-left: 10px;">
+                                      <p>${p.title}</p>
+                                      <div class="">
+                                        <p class="d-none d-md-block">
+                                            ${desktop}
+                                        </p>
+                                        <p class="d-block d-md-none">
+                                            ${mobile}
+                                        </p>
+                                        <span class="text-info">Read more<i class="uil uil-arrow-right"></i></span>
+                                      </div>
+                                     
+                                  </div>
+                                 </div>
+                              </a>
+                           </div>
+                         </div>
 
-                //                                 </div>
-                //                                 <div class="mt-2">
-                //                                     <p>${item.title}</p>
-                //                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
-                //                             iusto sed? Sed perferendis accusantium maxime! ... <span class="text-info">read more</span></p>
-
-                //                                     <p>Nill@Feb july</p>
-                //                                 </div>
-                //                         </a>
-                //                         </div>
-                //                     </div>
-                //                 </div> 
-
+                        
+                                    `
                                 
-
-                //                     `
-                                
-                //                 });
-                //                 if (result['links']['next'] == null){
+                                });
+                                if (result['links']['next'] == null){
                             
-                //                     document.getElementById("fetch-button").classList.add("d-none");
-                //                 }
-                //         })
-                //         .catch(error => console.log('error', error));
+                                    document.getElementById("lsfetch-button").classList.add("d-none");
+                                }
+                        })
+                        .catch(error => console.log('error', error));
 
                 // //===========================================================================
-                // function myFunction() {
+                function lmyFunction() {
 
-                //         // var requestOptions = {
-                //         // method: 'GET',
-                //         // redirect: 'follow'
-                //         // };
+                        // var requestOptions = {
+                        // method: 'GET',
+                        // redirect: 'follow'
+                        // };
 
-                //         fetch(url, requestOptions)
-                //         .then(response => response.json())
-                //         .then(result => {
-                //             console.log(result)
+                        fetch(latesturl, requestOptions)
+                        .then(response => response.json())
+                        .then(result => {
+                            // console.log(result)
                             
-                //                 console.log(result)
-                //                 url = result['links']['next']
-                //                 myArray = result['results']
-                //                 myArray.forEach(function (item) {
+                                // console.log(result)
+                                latesturl = result['links']['next']
+                                myArray = result['results']
+                                myArray.forEach(function (p) {
+                                    let mystring = p.intro
+                                    let mobile = mystring.substring(0,35);
+                                    let desktop = mystring.substring(0,150);
                                     
-                //                     document.getElementById("fetch-post").innerHTML += `
+                                    document.getElementById("homeLatestPost").innerHTML += `
 
-                //                     <div data-aos="fade-down-right" class="col-md-6 mb-1">
-                //                     <div class="card border-0">
-                //                         <div class="card-body">
-                //                         <a href="${item.get_absolute_url}" class="text-decoration-none text-dark">
-                //                             <div class="img-hover-zoom">
-                //                                 <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
+                                    <div data-aos="fade-down-left" class="col-12 mb-1 " >
+                           <div class="card border-0">
+                              <a href="${p.get_absolute_url}" class="text-decoration-none text-dark">
+                                <div class="card-body d-flex">
+                                  <div >
+                                      <img style="width: 150px; height: 100px; object-fit: cover;" src="${p.intro_image}" alt="this is image">
+                                  </div>
+      
+                                  <div style="margin-left: 10px;">
+                                      <p>${p.title}</p>
+                                      <div class="">
+                                        <p class="d-none d-md-block">
+                                          ${desktop}
+                                        </p>
+                                        <p class="d-block d-md-none">
+                                          ${mobile}
+                                        </p>
+                                        <span class="text-info">Read more<i class="uil uil-arrow-right"></i></span>
+                                      </div>
+                                     
+                                  </div>
+                                 </div>
+                              </a>
+                           </div>
+                         </div>
 
-                //                                 </div>
-                //                                 <div class="mt-2">
-                //                                     <p>${item.title}</p>
-                //                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, iusto sed? 
-                //                             Sed perferendis accusantium maxime! ... <span class="text-info">read more</span></p>
-
-                //                                     <p>Nill@Feb july</p>
-                //                                 </div>
-                //                         </a>
-                //                         </div>
-                //                     </div>
-                //                 </div> 
-
-                //                     `
+                                    `
                                 
-                //                 });
-                //                 if (result['links']['next'] == null){
+                                });
+                                if (result['links']['next'] == null){
                             
-                //                     document.getElementById("fetch-button").classList.add("d-none");
-                //                 }
-                //         })
-                //         .catch(error => console.log('error', error));
+                                    document.getElementById("lsfetch-button").classList.add("d-none");
+                                }
+                        })
+                        .catch(error => console.log('error', error));
 
 
-                //     }
+                    }
 
             ///
 

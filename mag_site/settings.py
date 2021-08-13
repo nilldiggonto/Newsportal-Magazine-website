@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'accounts',
     'carrier_admin',
+     'django_social_share',
 
     #all auth
 

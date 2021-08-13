@@ -1,6 +1,6 @@
 {%extends 'base/base.html'%}
 {% load humanize %}
-
+{% load social_share %}
 {%block style%}
 
 <style>
@@ -146,7 +146,30 @@
             <i class="uil uil-comments-alt"></i>comments:0</span>
 
             <div class="mt-2 mb-4">
-            <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: cover;" alt="">
+            <a href="#" data-bs-toggle="modal" data-bs-target="#singleImg">
+                <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: cover;" alt="">
+            </a>
+
+            <!--MODAL-->
+            <!-- Modal -->
+                <div class="modal fade" id="singleImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div> -->
+                        <div class="modal-body">
+                       <img src="{{obj.intro_image.url}}" alt="" class="img-fluid">
+                        </div>
+                        <!-- <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div> -->
+                    </div>
+                    </div>
+                </div>
+  <!---->
 
             </div>
 
@@ -165,6 +188,12 @@
             </div> -->
 
             <div class="mt-1">
+                <div class="d-flex">
+                    {% post_to_facebook object_or_url%}
+                    {% post_to_whatsapp  object_or_url "Share To WA" %}
+                {% post_to_reddit  object_or_url "Share To Reddit" %}
+                </div>
+                
                 <i class="uil uil-share"></i> Share:
                 <a class="" href=""><i class="uil uil-facebook-f"></i></a>
                 <a class="" href=""><i class="uil uil-facebook-f"></i></a>

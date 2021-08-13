@@ -23,6 +23,15 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
 
     <style>
+        body{
+            -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none; 
+        }
+
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
         .bg-one{
             background-color: rgb(36, 110, 145);
         }
@@ -330,24 +339,111 @@
 
 
             /////////////////////////////////////////////////
-            // Pagination
-            // var requestOptions = {
-            // method: 'GET',
-            // redirect: 'follow'
-            // };
-
-            // fetch("http://127.0.0.1:8000/api/latest/post/e1/", requestOptions)
-            // .then(response => response.json())
-            // .then(result => {
-            //     if (result['links']['next'] != null){
-            //         console.log('pass')
-            //     };
-            // })
-            // .catch(error => console.log('error', error));
+            let latesturl = "http://127.0.0.1:8000/api/latest/home/post/v1/" 
 
 
+                //================================================================
+
+                // var requestOptions = {
+                //         method: 'GET',
+                //         redirect: 'follow'
+                //         };
+
+                //         fetch(latesturl, requestOptions)
+                //         .then(response => response.json())
+                //         .then(result => {
+                //             // console.log(result)
+                            
+                //                 // console.log(result)
+                //                 latesturl = result['links']['next']
+                //                 myArray = result['results']
+                //                 myArray.forEach(function (item) {
+                                    
+                //                     document.getElementById("homeLatestPost").innerHTML += `
+                //                     <div data-aos="fade-down-right" class="col-md-12 mb-1">
+                //                     <div class="card border-0">
+                //                         <div class="card-body">
+                //                         <a href="${item.get_absolute_url}" class="text-decoration-none text-dark">
+                //                             <div class="img-hover-zoom">
+                //                                 <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
+
+                //                                 </div>
+                //                                 <div class="mt-2">
+                //                                     <p>${item.title}</p>
+                //                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
+                //                             iusto sed? Sed perferendis accusantium maxime! ... <span class="text-info">read more</span></p>
+
+                //                                     <p>Nill@Feb july</p>
+                //                                 </div>
+                //                         </a>
+                //                         </div>
+                //                     </div>
+                //                 </div> 
+
+                                
+
+                //                     `
+                                
+                //                 });
+                //                 if (result['links']['next'] == null){
+                            
+                //                     document.getElementById("fetch-button").classList.add("d-none");
+                //                 }
+                //         })
+                //         .catch(error => console.log('error', error));
+
+                // //===========================================================================
+                // function myFunction() {
+
+                //         // var requestOptions = {
+                //         // method: 'GET',
+                //         // redirect: 'follow'
+                //         // };
+
+                //         fetch(url, requestOptions)
+                //         .then(response => response.json())
+                //         .then(result => {
+                //             console.log(result)
+                            
+                //                 console.log(result)
+                //                 url = result['links']['next']
+                //                 myArray = result['results']
+                //                 myArray.forEach(function (item) {
+                                    
+                //                     document.getElementById("fetch-post").innerHTML += `
+
+                //                     <div data-aos="fade-down-right" class="col-md-6 mb-1">
+                //                     <div class="card border-0">
+                //                         <div class="card-body">
+                //                         <a href="${item.get_absolute_url}" class="text-decoration-none text-dark">
+                //                             <div class="img-hover-zoom">
+                //                                 <img style="width: 400px; height: 200px; object-fit: cover;" src="${item.intro_image}" alt="" class="img-fluid">
+
+                //                                 </div>
+                //                                 <div class="mt-2">
+                //                                     <p>${item.title}</p>
+                //                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, iusto sed? 
+                //                             Sed perferendis accusantium maxime! ... <span class="text-info">read more</span></p>
+
+                //                                     <p>Nill@Feb july</p>
+                //                                 </div>
+                //                         </a>
+                //                         </div>
+                //                     </div>
+                //                 </div> 
+
+                //                     `
+                                
+                //                 });
+                //                 if (result['links']['next'] == null){
+                            
+                //                     document.getElementById("fetch-button").classList.add("d-none");
+                //                 }
+                //         })
+                //         .catch(error => console.log('error', error));
 
 
+                //     }
 
             ///
 

@@ -142,7 +142,7 @@ def single_page(request,slug):
     
 
 
-class LatestPostAPIView(APIView):
+class CategoryPostListAPIView(APIView):
     # pagination_class = PostPagination
     pagination_class = CustomPagination()
 
@@ -157,4 +157,16 @@ class LatestPostAPIView(APIView):
             return self.pagination_class.get_paginated_response(serializer.data)
         serializer = PostSerializer(qs, many=True)
 
+        return Response({'data':serializer.data})
+
+class LatestPostListAPIView(APIView):
+    pagination_class = CustomPagination()
+
+    def get(self,request,format=None):
+        qs = Post.objects.filter(active=True)
+        page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
+        if page is not None:
+            serializer = PostSerializer(page, many=True)
+            return self.pagination_class.get_paginated_response(serializer.data)
+        serializer = PostSerializer(qs, many=True)
         return Response({'data':serializer.data})

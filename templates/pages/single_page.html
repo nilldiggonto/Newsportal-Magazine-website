@@ -1,5 +1,5 @@
 {%extends 'base/base.html'%}
-
+{% load humanize %}
 
 {%block style%}
 
@@ -140,14 +140,19 @@
         <div class="row mt-4 g-2">
             <div class="col-md-8">
             <h4><b>{{obj.title}}</b></h4>
-            <span<i class="uil uil-edit"></i>written by:nill |
-            <i class="uil uil-calendar-alt"></i>feb 19 | 
-            <i class="uil uil-eye"></i>views:1231 | 
+            <span<i class="uil uil-edit"></i>written by:{{obj.author.first_name}} {{obj.author.last_name}} |
+            <i class="uil uil-calendar-alt"></i> {{obj.created_at|date:"d M" }} | 
+            <i class="uil uil-eye"></i>views: {{obj.view_count}} | 
             <i class="uil uil-comments-alt"></i>comments:0</span>
 
             <div class="mt-2 mb-4">
             <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: cover;" alt="">
 
+            </div>
+
+            <div class="mt-2">
+                <span> <b>Introduction:</b></span>
+                {{obj.intro}}
             </div>
 
             <div>

@@ -47,8 +47,7 @@
                             </div>
                         <div class="mt-2">
                             <p>{{post.title}}</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, iusto sed? Sed perferendis accusantium maxime!
-                                ... <span class="text-info">read more</span>
+                            <p>{{post.intro | truncatechars:15}} <span class="text-info">read more</span>
                             </p>
                             <!-- <p>Nill@Feb july</p> -->
                         </div>
@@ -167,6 +166,9 @@
                     url = result['links']['next']
                     myArray = result['results']
                     myArray.forEach(function (item) {
+
+                        // let summary = item.summary_one
+                        // summary = summary.replace(/<img[^>]*>/g,"");
                         
                         document.getElementById("fetch-post").innerHTML += `
                         <div data-aos="fade-down-right" class="col-md-6 mb-1">
@@ -179,10 +181,10 @@
                                     </div>
                                     <div class="mt-2">
                                         <p>${item.title}</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum,
-                                 iusto sed? Sed perferendis accusantium maxime! ... <span class="text-info">read more</span></p>
+                                        
+                                        <div class="mt-2 text-truncate"> ${item.intro}  </div>
 
-                                        <p>Nill@Feb july</p>
+                                       
                                     </div>
                                </a>
                             </div>
@@ -218,6 +220,8 @@
                     url = result['links']['next']
                     myArray = result['results']
                     myArray.forEach(function (item) {
+                        // let summary = item.summary_one
+                        // summary = summary.replace(/<img[^>]*>/g,"");
                         
                         document.getElementById("fetch-post").innerHTML += `
 
@@ -231,10 +235,9 @@
                                     </div>
                                     <div class="mt-2">
                                         <p>${item.title}</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, iusto sed? 
-                                Sed perferendis accusantium maxime! ... <span class="text-info">read more</span></p>
+                                        <div class="mt-2 text-truncate">  ${item.intro}  </div>
 
-                                        <p>Nill@Feb july</p>
+                                       
                                     </div>
                                </a>
                             </div>

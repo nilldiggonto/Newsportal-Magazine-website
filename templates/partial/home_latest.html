@@ -10,6 +10,9 @@
                      </div>
                      
                      <div class="row mt-2" id="loadDiv" >
+                       <div id="homeLatestPost">
+
+                       </div>
                         {%for p in all_post%}
                          <div class="col-12 mb-1" >
                            <div class="card border-0">
@@ -21,10 +24,9 @@
       
                                   <div style="margin-left: 10px;">
                                       <p>{{p.title}}!</p>
-                                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem neque odio voluptatem nihil, laborum accusamus?....
+                                      <p>{{p.summary_one | safe | truncatechars:15}}....
                                          <span class="text-info">Read more<i class="uil uil-arrow-right"></i></span></p>
-                                      <!-- <span class="border p-1">{{p.scategory}}</span> -->
-                                      <!-- <p class="p-1">by that artist</p> -->
+                                     
                                   </div>
                                  </div>
                               </a>

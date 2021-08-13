@@ -31,12 +31,13 @@ def create_post(request):
  
         cats = request.POST.get('category')
         pic = request.FILES['pic']
+        intro = request.POST.get('intro')
 
         description = request.POST.get('description')
         cat = PostSubCategory.objects.get(sub_name=cats)
         user = request.user
 
-        Post.objects.create(author=user,scategory=cat,title=title,summary_one=description,intro_image=pic)
+        Post.objects.create(author=user,scategory=cat,title=title,summary_one=description,intro_image=pic,intro=intro)
         return redirect('dashboard-home')
 
     return render(request,template_name,context=context)

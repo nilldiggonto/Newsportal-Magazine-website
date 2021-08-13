@@ -15,8 +15,8 @@ class PostCategory(models.Model):
     rank        =   models.IntegerField(default=1)
     icon        =   models.CharField(null=True,blank=True,max_length=250)
     active      =   models.BooleanField(default=True)
-    created_at  =   models.DateTimeField(auto_now=True)
-    updated_at  =   models.DateTimeField(auto_now_add=True)
+    updated_at  =   models.DateTimeField(auto_now=True)
+    created_at  =   models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.category
@@ -40,8 +40,8 @@ class PostSubCategory(models.Model):
     rank        =   models.IntegerField(default=1)
     featured    =   models.BooleanField(default=False)
     active      =   models.BooleanField(default=True)
-    created_at  =   models.DateTimeField(auto_now=True)
-    updated_at  =   models.DateTimeField(auto_now_add=True)
+    updated_at  =   models.DateTimeField(auto_now=True)
+    created_at  =   models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.sub_name
@@ -66,7 +66,7 @@ class Post(models.Model):
     slug                =   models.SlugField(max_length=300,unique=True,null=True,blank=True)
 
 
-    intro               =   models.CharField(max_length=200,null=True,blank=True)
+    intro               =   models.TextField(null=True,blank=True)
     summary_one         =   models.TextField(null=True,blank=True)
     
     summary_two         =   models.TextField(null=True,blank=True)
@@ -79,8 +79,8 @@ class Post(models.Model):
 
     featured            =   models.BooleanField(default=False)
     active              =   models.BooleanField(default=False)
-    created_at          =   models.DateTimeField(auto_now=True)
-    updated_at          =   models.DateTimeField(auto_now_add=True)
+    updated_at          =   models.DateTimeField(auto_now=True)
+    created_at          =   models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title

@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
 from news_app.models import PostSubCategory,Post
 
@@ -42,7 +43,7 @@ def create_post(request):
 
     return render(request,template_name,context=context)
 
-
+@staff_member_required
 def request_post(request):
     template_name = 'carrier/request_post.html'
     posts = Post.objects.filter(active=False)

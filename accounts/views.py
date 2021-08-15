@@ -31,21 +31,25 @@ def registrationView(request):
 
 def loginView(request):
     template_name = 'accounts/login.html'
+    a = ''
     if request.user.is_authenticated:
         return redirect('dashboard-home')
         
     elif request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
+        if User.objects.filter(username=username,is_active=False):
+            a = 'ask antu to verify. will automate later'
+
         # print(username,password)
         user = authenticate(username=username, password=password)
         if user:
             login(request,user)
             return redirect('dashboard-home')
         else:
-            pass
+            a = 'please register sir'
 
-    return render(request,template_name)
+    return render(request,template_name,context={'a':a})
 
 @login_required
 def logoutView(request):

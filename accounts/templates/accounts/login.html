@@ -10,16 +10,17 @@
 
             <div class="text-center ">
                 <h3><i class="uil uil-tornado"></i></h3>
-                <h4>The News Carrier</h4>
+                <h4>NO Club</h4>
                 <p class="lead">Welcome</p>
             </div>
 
         </div>
         <div class="col-md-6 align-middle border-start" >
-            <h3 class="text-center">The News <sup><i class="uil uil-tornado"></i></sup> Carrier</h3>
+            <h3 class="text-center">NO <sup><i class="uil uil-tornado"></i></sup> club</h3>
             <h4 class="text-center">Login</h4>
             <form method="POST" class="p-2">
                 {%csrf_token%}
+                <h4>{{a}}</h4>
                 <div class="mb-3">
                     <label for="username" class="form-label"><i class="uil uil-user"></i> username</label>
                     <input type="text" class="form-control" id="username" placeholder="username" name="username">

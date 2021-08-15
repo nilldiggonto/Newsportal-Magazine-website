@@ -120,6 +120,11 @@
 
 {%endblock style%}
 
+
+{%block metatitle%}{{obj.title}}{%endblock metatitle%}
+{%block metadescription%}{{obj.intro}}{%endblock metadescription%}
+{%block metaimg%}{{ request.META.HTTP_HOST }}{{obj.intro_image.url}}{%endblock metaimg%}
+
 {%block content%}
 
 <!-- <div id="category-page" class="d-none d-md-block mt-2">
@@ -188,17 +193,18 @@
             </div> -->
 
             <div class="mt-1">
-                <div class="d-flex">
-                    {% post_to_facebook object_or_url%}
-                    {% post_to_whatsapp  object_or_url "Share To WA" %}
-                {% post_to_reddit  object_or_url "Share To Reddit" %}
-                </div>
+            
                 
                 <i class="uil uil-share"></i> Share:
-                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
-                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
-                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
-                <a class="" href=""><i class="uil uil-facebook-f"></i></a>
+                <a class="btn btn-sm btn-outline-two" href="https://www.facebook.com/sharer/sharer.php?u={{request.build_absolute_uri}}" target="_blank">
+                    <i class="uil uil-facebook-f"></i>facebook</a>
+                <a class="btn btn-sm btn-outline-two" href="https://twitter.com/intent/tweet?text={{request.build_absolute_uri}}" target="_blank"><i class="uil uil-twitter">
+                   
+                </i> twitter</a>
+                <a class="btn btn-sm btn-outline-two" href="https://www.linkedin.com/shareArticle?mini=true&title={{obj.title}}s&url={{request.build_absolute_uri}}"
+                target="_blank">
+                    <i class="uil uil-linkedin"></i>linkedin</a>
+                <!-- <a class="" href=""></a> -->
             </div>
 
 

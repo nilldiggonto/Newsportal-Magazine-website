@@ -11,7 +11,8 @@
     <div class="row g-1">
         <div class="col-md-8">
             <h6 class="p-2  bg-four text-white">Your Posts</h6>
-            <table class="table table-bordered" id="myTable">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="myTable">
                 <thead>
                   <tr>
                     <th scope="col">#</th>
@@ -45,6 +46,7 @@
            
                 </tbody>
               </table>
+            </div>
 
               {%if  posts.count > 6 %}
               <div class="text-center">

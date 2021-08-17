@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import PostCategory,Post,PostSubCategory
+from .models import *
 from .serializers import PostSerializer
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
@@ -170,3 +170,14 @@ class LatestPostListAPIView(APIView):
             return self.pagination_class.get_paginated_response(serializer.data)
         serializer = PostSerializer(qs, many=True)
         return Response({'data':serializer.data})
+
+
+
+class CommentAPIView(APIView):
+    def post(self,request):
+  
+        slug = request.data['slug']
+        name = request.data['name']
+        comment = request.data['comment']
+        print(name,comment)
+        return Response({'status':'thnks'})

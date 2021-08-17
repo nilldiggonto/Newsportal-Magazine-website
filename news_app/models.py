@@ -97,6 +97,18 @@ class Post(models.Model):
         return reverse("single-page", kwargs={"slug": self.slug})
 
 
+
+class Comment(models.Model):
+    post    =   models.ForeignKey(Post,related_name='comment',on_delete=models.CASCADE)
+    name    =   models.CharField(max_length=50)
+    oponion =   models.CharField(max_length=120)
+    created_at  = models.DateTimeField(auto_now_add=True)
+    updated_at  = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+
     
 
 

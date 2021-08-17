@@ -127,20 +127,11 @@
 
 {%block content%}
 
-<!-- <div id="category-page" class="d-none d-md-block mt-2">
-    <div class="container">
-     <ol class="breadcrumb">
-         <li class="breadcrumb-item"><a href="{%url 'home-page' %}">Home</a></li>
-         <li class="breadcrumb-item"><a href="{%url 'home-page' %}">Category</a></li>
-         <li class="breadcrumb-item active">{{obj.title}}</li>
-       </ol>
-    </div>
-     
- </div> -->
+
 
  <div id="single-page" class="mb-4">
      <div class="container">
-        <!-- <h4 class="p-2"><strong>{{obj.scategory}}</strong></h4> -->
+       
 
         <div class="row mt-4 g-2">
             <div class="col-md-8">
@@ -160,17 +151,11 @@
                 <div class="modal fade" id="singleImg" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                     <div class="modal-content">
-                        <!-- <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div> -->
+                      
                         <div class="modal-body">
                        <img src="{{obj.intro_image.url}}" alt="" class="img-fluid">
                         </div>
-                        <!-- <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div> -->
+                      
                     </div>
                     </div>
                 </div>
@@ -186,11 +171,7 @@
             <div>
                 {{obj.summary_one|safe }}
             </div>
-            <!-- <div>
-                <span><b>Tags:  </b></span>
-                <span>One</span>
-                <span>Two</span>
-            </div> -->
+         
 
             <div class="mt-1">
             
@@ -207,64 +188,46 @@
                 <!-- <a class="" href=""></a> -->
             </div>
 
+            <hr>
 
-            <div class="mt-4 ">
+            <div class="mt-4 p-1">
                 
 
 
-                <figure class="text-end">
-                    <blockquote class="blockquote" style="font-size: medium;">
-                      <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                  </figure>
+                <div id="comment-box">
+                    <figure class="text-end">
+                        <blockquote class="blockquote" style="font-size: medium;">
+                          <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        
+                        </blockquote>
+                        <figcaption class="blockquote-footer text-wrap">
+                          Someone famous in 
+                        </figcaption>
+                      </figure>
+                </div>
 
-                  <figure class="text-end">
-                    <blockquote class="blockquote" style="font-size: medium;">
-                      <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                  </figure>
-
-                  <figure class="text-end">
-                    <blockquote class="blockquote" style="font-size: medium;">
-                      <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                    
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                      Someone famous in <cite title="Source Title">Source Title</cite>
-                    </figcaption>
-                  </figure>
+                  
 
 
 
 
-                  <form class="form-block">
+                  <form class="form-block" >
                     <div class="row g-1">
                         <div class="col-xs-12 ">
                             <div class="form-group fl_icon">
                                 <div class="icon"><i class="fa fa-user"></i></div>
-                                <input class="form-input" type="text" placeholder="Your name">
+                                <input id="comment-name" name="name" required maxlength="30" class="form-input" type="text" placeholder="Your name">
                             </div>
                         </div>
-                        <!-- <div class="col-xs-12 col-sm-6 fl_icon">
-                            <div class="form-group fl_icon">
-                                <div class="icon"><i class="fa fa-envelope-o"></i></div>
-                                <input class="form-input" type="text" placeholder="Your email">
-                            </div>
-                        </div> -->
+                      
                         <div class="col-xs-12">									
                             <div class="form-group">
-                                <textarea class="form-input" required="" placeholder="Your text" rows="3"></textarea>
+                                <textarea maxlength="120" id="comment-oponion"  class="form-input" required placeholder="Your oponion" rows="3"></textarea>
                             </div>
                         </div>
-                        <a class="d-inline btn btn-outline-two btn-sm ">Comment</a>
+                        <div class="text-center">
+                            <a onclick="commentFunction()" class="d-inline btn btn-outline-two btn-sm " style="width: 30%;">Comment</a>
+                        </div>
                     </div>
                 </form>
             </div>
@@ -342,3 +305,31 @@
  </div>
 
 {%endblock%}
+
+{%block script%}
+
+<script>
+  
+    function commentFunction() {
+    let name = document.getElementById("comment-name").value;
+    let comment = document.getElementById('comment-oponion').value;
+
+    document.getElementById("comment-box").innerHTML += `
+    <figure class="text-end">
+    <blockquote class="blockquote text-wrap" style="font-size: medium;">
+        <p class="mb-0"></p>${comment}.</p>
+    
+    </blockquote>
+    <figcaption class="blockquote-footer">
+        ${name}
+    </figcaption>
+    </figure>
+    `;
+    document.getElementById("comment-name").value ='';
+    document.getElementById('comment-oponion').value='';
+    }
+    // document.getElementById("comment-name").value = ''
+    // document.getElementById("comment-box").value = ''
+</script>
+
+{%endblock script%}

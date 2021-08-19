@@ -195,15 +195,17 @@
 
 
                 <div id="comment-box">
+                    {% for com in obj.comment.all %}
                     <figure class="text-end">
                         <blockquote class="blockquote" style="font-size: medium;">
-                          <p class="mb-0"></p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                          <p class="mb-0"></p>{{com.oponion}}</p>
                         
                         </blockquote>
                         <figcaption class="blockquote-footer text-wrap">
-                          Someone famous in 
+                          {{com.name}} 
                         </figcaption>
                       </figure>
+                      {% endfor%}
                 </div>
 
                   
@@ -325,6 +327,32 @@
     </figcaption>
     </figure>
     `;
+
+
+    ////////////////=============================================
+
+    var cyHeaders = new Headers();
+    cyHeaders.append("Content-Type", "application/json");
+
+    var craw = JSON.stringify({
+    "slug": "{{obj.slug}}",
+    "name": name,
+    "comment": comment
+    });
+
+    var crequestOptions = {
+    method: 'POST',
+    headers: cyHeaders,
+    body: craw,
+    // redirect: 'follow'
+    };
+
+    fetch("http://127.0.0.1:8000/api/comment/", crequestOptions)
+    .then(response => response.text())
+    // .then(result => console.log(result))
+    .catch(error => console.log('error', error));
+
+    ///////////////==============================================
     document.getElementById("comment-name").value ='';
     document.getElementById('comment-oponion').value='';
     }

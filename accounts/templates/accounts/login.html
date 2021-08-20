@@ -18,6 +18,13 @@
         <div class="col-md-6 align-middle border-start" >
             <h3 class="text-center">NO <sup><i class="uil uil-tornado"></i></sup> club</h3>
             <h4 class="text-center">Login</h4>
+
+         {% if request.session.vmsg  %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Verify!</strong> Check your mail to verify.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+              </div>
+        {% endif %}
             <form method="POST" class="p-2">
                 {%csrf_token%}
                 <h4>{{a}}</h4>

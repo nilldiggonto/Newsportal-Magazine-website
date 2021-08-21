@@ -213,7 +213,8 @@
 
 
 
-                  <form class="form-block" >
+                  <form class="form-block" method="POST" >
+                      {% csrf_token%}
                     <div class="row g-1">
                         <div class="col-xs-12 ">
                             <div class="form-group fl_icon">
@@ -315,6 +316,8 @@
     function commentFunction() {
     let name = document.getElementById("comment-name").value;
     let comment = document.getElementById('comment-oponion').value;
+    let csrf = document.getElementsByName('csrfmiddlewaretoken')[0].value
+    
 
     document.getElementById("comment-box").innerHTML += `
     <figure class="text-end">
@@ -333,13 +336,17 @@
 
     var cyHeaders = new Headers();
     cyHeaders.append("Content-Type", "application/json");
+    cyHeaders.append('X-CSRFToken',csrf);
+    
 
     var craw = JSON.stringify({
     "slug": "{{obj.slug}}",
     "name": name,
-    "comment": comment
+    "comment": comment,
+    
     });
 
+   
     var crequestOptions = {
     method: 'POST',
     headers: cyHeaders,
@@ -347,9 +354,9 @@
     // redirect: 'follow'
     };
 
-    fetch("http://127.0.0.1:8000/api/comment/", crequestOptions)
+    fetch("/api/comment/", crequestOptions)
     .then(response => response.text())
-    // .then(result => console.log(result))
+    .then(result => console.log(result))
     .catch(error => console.log('error', error));
 
     ///////////////==============================================

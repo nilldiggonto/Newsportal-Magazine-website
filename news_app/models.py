@@ -99,6 +99,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
+    comment_to = models.ForeignKey(User,related_name='comment_user',on_delete=models.CASCADE)
     post    =   models.ForeignKey(Post,related_name='comment',on_delete=models.CASCADE)
     name    =   models.CharField(max_length=50)
     oponion =   models.CharField(max_length=120)

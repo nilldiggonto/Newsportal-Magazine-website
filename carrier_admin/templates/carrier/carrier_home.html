@@ -105,38 +105,22 @@
 
             <div class="card">
                 <div class="card-body">
+
+                  {%for com in comments %}
                     <figure>
-                        <blockquote class="blockquote">
-                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                        <blockquote class="blockquote "  style="font-size: medium;">
+                          <p class="mb-0">{{com.oponion}}</p>
                         
                         </blockquote>
                         <figcaption class="blockquote-footer">
-                          Someone famous in <cite title="Source Title">Source Title</cite>
+                          {{com.name}} <cite title="Source Title">| {{com.created_at | timesince}}</cite>
+                          <a href="{{com.post.get_absolute_url}}">{{com.post.title}}</a>
                         </figcaption>
                       </figure>
+                    {% endfor%}
                       <hr>
 
-                      <figure>
-                        <blockquote class="blockquote">
-                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        
-                        </blockquote>
-                        <figcaption class="blockquote-footer">
-                          Someone famous in <cite title="Source Title">Source Title</cite>
-                        </figcaption>
-                      </figure>
-
-                      <hr>
-
-                      <figure>
-                        <blockquote class="blockquote">
-                          <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                        
-                        </blockquote>
-                        <figcaption class="blockquote-footer">
-                          Someone famous in <cite title="Source Title">Source Title</cite>
-                        </figcaption>
-                      </figure>
+                     
 
                 </div>
             </div>

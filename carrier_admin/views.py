@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
 
-from news_app.models import PostSubCategory,Post
+from news_app.models import PostSubCategory,Post,Comment
 
 # Create your views here.
 
@@ -12,9 +12,11 @@ def admin_home(request):
     template_name = 'carrier/carrier_home.html'
     posts = Post.objects.filter(author=request.user)
     most_view = Post.objects.filter(author=request.user).order_by('-view_count')
+    comments = Comment.objects.filter(comment_to=request.user)
     context = {
         'posts':posts,
-        'most_view':most_view
+        'most_view':most_view,
+        'comments':comments
     }
     return render(request,template_name,context)
 

@@ -179,7 +179,8 @@ class CommentAPIView(APIView):
         slug = request.data['slug']
         name = request.data['name']
         comment = request.data['comment']
+        
         post = Post.objects.get(slug=slug)
-        Comment.objects.create(post=post,name=name,oponion=comment)
-        # print(slug,name,comment)
+        Comment.objects.create(post=post,name=name,oponion=comment,comment_to=post.author)
+        print(slug,name,comment)
         return Response({'status':'thnks'})

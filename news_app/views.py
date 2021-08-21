@@ -10,7 +10,7 @@ import json
 
 
 
-
+from django.db.models import Q
 ############# DRF IMPORT
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -66,13 +66,27 @@ class CustomPagination(pagination.PageNumberPagination):
 # Create your views here.
 def homepage(request):
     template_name = 'base/base_home.html'
-    postcategory = PostCategory.objects.all()
-    subcategory = PostSubCategory.objects.all()
-    primary_featured = Post.objects.filter(primary_featured=True,active=True).order_by('-id')[0]
-    featured_home = Post.objects.filter(featured=True,active=True)
-    all_post = Post.objects.filter(active=True)
-    popular_post = Post.objects.filter(active=True,popular=True)
-    featured_category = PostSubCategory.objects.filter(featured=True)
+    bangla = request.GET.get('lang')
+    # print(bangla)
+    lang = 'english'
+    if bangla == 'bangla':
+        postcategory = PostCategory.objects.filter(bangla=True)
+        subcategory = PostSubCategory.objects.filter(bangla=True)
+        # primary_featured = Post.objects.filter(primary_featured=True,active=True,bangla=True).order_by('-id')[0]
+        featured_home = Post.objects.filter(featured=True,active=True,bangla=True)
+        all_post = Post.objects.filter(active=True,bangla=True)
+        popular_post = Post.objects.filter(active=True,popular=True,bangla=True)
+        featured_category = PostSubCategory.objects.filter(featured=True,bangla=True)
+        lang = 'bangla'
+    else:
+        postcategory = PostCategory.objects.filter(bangla=False)
+        subcategory = PostSubCategory.objects.filter(bangla=False)
+        # primary_featured = Post.objects.filter(primary_featured=True,active=True,bangla=True).order_by('-id')[0]
+        featured_home = Post.objects.filter(featured=True,active=True,bangla=False)
+        all_post = Post.objects.filter(active=True,bangla=False)
+        popular_post = Post.objects.filter(active=True,popular=True,bangla=False)
+        featured_category = PostSubCategory.objects.filter(featured=True,bangla=False)
+
 
     # print( request.META['REMOTE_ADDR'])
     # ip = get_client_ip(request)
@@ -88,10 +102,11 @@ def homepage(request):
         'postcategory':postcategory,
         'featured':featured_home,
         'subcategory':subcategory,
-        'prime_feature':primary_featured,
+        # 'prime_feature':primary_featured,
         'all_post':all_post,
         'popular_post':popular_post,
         'featured_category':featured_category,
+        'lang':lang
         # 'country':country
     }
     return render(request,template_name,context)
@@ -148,14 +163,25 @@ class CategoryPostListAPIView(APIView):
 
     def get(self,request,format=None,slug=None):
         slug = self.kwargs.get('slug')
-        # print(slug)
-        scategory = PostSubCategory.objects.get(slug=slug)
-        qs = Post.objects.filter(active=True,scategory=scategory)
-        page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
-        if page is not None:
-            serializer = PostSerializer(page, many=True)
-            return self.pagination_class.get_paginated_response(serializer.data)
-        serializer = PostSerializer(qs, many=True)
+        # print()
+        bangla = request.GET.get('lang')
+        if bangla == 'bangla':
+            scategory = PostSubCategory.objects.get(slug=slug,bangla=True)
+            qs = Post.objects.filter(active=True,scategory=scategory,bangla=True)
+            page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
+            if page is not None:
+                serializer = PostSerializer(page, many=True)
+                return self.pagination_class.get_paginated_response(serializer.data)
+            serializer = PostSerializer(qs, many=True)
+        else:
+            scategory = PostSubCategory.objects.get(slug=slug,bangla=False)
+            qs = Post.objects.filter(active=True,scategory=scategory,bangla=False)
+            page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
+            if page is not None:
+                serializer = PostSerializer(page, many=True)
+                return self.pagination_class.get_paginated_response(serializer.data)
+            serializer = PostSerializer(qs, many=True)
+
 
         return Response({'data':serializer.data})
 
@@ -163,12 +189,23 @@ class LatestPostListAPIView(APIView):
     pagination_class = CustomPagination()
 
     def get(self,request,format=None):
-        qs = Post.objects.filter(active=True)
-        page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
-        if page is not None:
-            serializer = PostSerializer(page, many=True)
-            return self.pagination_class.get_paginated_response(serializer.data)
-        serializer = PostSerializer(qs, many=True)
+        bangla = request.GET.get('lang')
+        if bangla == 'bangla':
+
+            qs = Post.objects.filter(active=True,bangla=True)
+            page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
+            if page is not None:
+                serializer = PostSerializer(page, many=True)
+                return self.pagination_class.get_paginated_response(serializer.data)
+            serializer = PostSerializer(qs, many=True)
+        else:
+            qs = Post.objects.filter(active=True,bangla=False)
+            page = self.pagination_class.paginate_queryset(queryset=qs, request=request)
+            if page is not None:
+                serializer = PostSerializer(page, many=True)
+                return self.pagination_class.get_paginated_response(serializer.data)
+            serializer = PostSerializer(qs, many=True)
+
         return Response({'data':serializer.data})
 
 
@@ -182,5 +219,22 @@ class CommentAPIView(APIView):
         
         post = Post.objects.get(slug=slug)
         Comment.objects.create(post=post,name=name,oponion=comment,comment_to=post.author)
-        print(slug,name,comment)
+        # print(slug,name,comment)
         return Response({'status':'thnks'})
+
+
+###############################
+def searchView(request):
+    template_name = 'pages/search.html'
+    if request.method == 'GET':
+        search = request.GET.get('fsearch')
+        print(search)
+        qs = ''
+        if search:
+            qs = Post.objects.filter(Q(title__icontains=search) | Q(intro__icontains=search) | Q(summary_one__icontains=search))
+        context = {
+            'search':search,
+            'qs':qs
+        }
+        
+        return render(request,template_name,context)

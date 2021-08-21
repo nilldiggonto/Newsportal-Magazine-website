@@ -6,6 +6,7 @@ urlpatterns = [
     path('',homepage,name='home-page'),
     path('api/latest/home/post/v1/',LatestPostListAPIView.as_view(),name='api-latest-home-v1'),
     path('api/comment/',CommentAPIView.as_view(),name='api-comment-api-view'),
+    path('search/',searchView,name='search'),
 
     # path('api/comment/')
     path('category/<str:slug>/',category_page,name='category-page'),

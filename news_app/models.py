@@ -15,6 +15,7 @@ class PostCategory(models.Model):
     rank        =   models.IntegerField(default=1)
     icon        =   models.CharField(null=True,blank=True,max_length=250)
     active      =   models.BooleanField(default=True)
+    bangla      =   models.BooleanField(default=False)
     updated_at  =   models.DateTimeField(auto_now=True)
     created_at  =   models.DateTimeField(auto_now_add=True)
 
@@ -40,6 +41,8 @@ class PostSubCategory(models.Model):
     rank        =   models.IntegerField(default=1)
     featured    =   models.BooleanField(default=False)
     active      =   models.BooleanField(default=True)
+    bangla      =   models.BooleanField(default=False)
+
     updated_at  =   models.DateTimeField(auto_now=True)
     created_at  =   models.DateTimeField(auto_now_add=True)
 
@@ -78,6 +81,8 @@ class Post(models.Model):
     view_count          =   models.BigIntegerField(default=0)
 
     featured            =   models.BooleanField(default=False)
+    bangla      =   models.BooleanField(default=False)
+
     active              =   models.BooleanField(default=False)
     updated_at          =   models.DateTimeField(auto_now=True)
     created_at          =   models.DateTimeField(auto_now_add=True)

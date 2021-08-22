@@ -1,54 +1,6 @@
 
-<!-- { postcategory}} -->
-<!-- <div class="container d-md-none mb-5" >
- 
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary  fixed-top" >
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">The <b>News <sup><i class="uil uil-tornado"></i></sup></b></span>Carrier</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home
-              <span class="visually-hidden">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-         
-        </ul>
-      
-      </div>
-    </div>
-  </nav>
-</div> -->
-
-<!--======-->
-
-<!---==========-->
-
-
-
-<!--==================================-->
-
-<!-- <div>
-  <a href="">one</a>
-  <a href="">two</a>
-  <a href="">three</a>
-</div> -->
-
 <div id="navigation"  style="background-color:#fafafa;" class="fixed-top" >
-    <div class="mt-2">
+    <div class="">
 
       <div id="brand" class="" >
         <div class="container">
@@ -63,15 +15,13 @@
         </div>
     </div>
         
-    <nav class="navbar navbar-expand-lg navbar-dark p-1 " style="background-color:#9f1239;">
+    <nav class="navbar navbar-expand-lg navbar-dark p-1 d-none d-md-block" style="background-color:#9f1239;">
             
       <div class="container">
 
-        <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" aria-controls="main_nav" aria-expanded="true" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      
              <!---===============================================-->
-        <div class="collapse navbar-collapse justify-content-center" id="main_nav">
+        <div class="collapse navbar-collapse justify-content-center" >
           <ul class="navbar-nav ">
             <li class="nav-item">
               <a href="{%url 'home-page' %}" class="nav-link active"><i class="uil uil-estate"></i> Home</a>
@@ -98,44 +48,70 @@
                       </div>
                     </div>
 
-<!-- 
-                      <div class="d-flex align-items-start ">
-                          <div style="width: 20%;" class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                              {% for scat in cat.subcategory.all %}
-                            <button  class="nav-link text-dark {%if forloop.counter == 1%} active {%endif%}" id="{{scat.slug}}-tab" data-bs-toggle="pill" data-bs-target="#{{scat.slug}}" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">{{scat.sub_name}}</button>
-                            {%endfor%}
-                            
-                          </div>
-                          <div class="tab-content" id="v-pills-tabContent" style="width: 100%;">
-                              {% for scat in cat.subcategory.all %}
-                            <div class="tab-pane fade show {%if forloop.counter == 1%} active {%endif%}" id="{{scat.slug}}" role="tabpanel" aria-labelledby="{{scat.slug}}-tab">
-                               <div class="row g-1">
-                                   {% for post in scat.post.all %}
-                                   <div class="col-3">
-                                       <div class="card">
-                                          
-                                           <img class="img-fluid" style="height: 100px; object-fit: cover;" src="{{post.intro_image.url}}" alt="">
-                                           <div class="card-body">
-                                               <p><b>{{post.title}}</b></p>
-                                             
-                                               <span>Entertainment July 8</span>
-                                           </div>
-                                       </div>
-                                   </div>
-                                   {%endfor%}
-                                   <div class="text-center mt-5 mb-5">
-                                    <a class="btn btn-sm btn-info" style="width: 50%;" href=" {{ scat.get_absolute_url}}">View All</a>
-                                   </div>
-                          </div>
-                        </div>
-                        {%endfor%} -->
+
                   </div> <!--dropdown menu-->
               </li>
               {%endfor%} 
           </ul>
       </div> <!-- navbar-collapse.// -->
+
+
+      <!----------------------- FOR MOBILE=====================-->
+
+
+      <!--==========================================================-->
+
+
     </div> <!--.container-->
-        </nav>
+  </nav>
+  <!---==============================-->
+  <nav class="navbar navbar-expand-lg navbar-dark p-1 d-sm-block d-md-none" style="background-color:#9f1239;">
+            
+    <div class="container">
+
+      <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#main_nav_phone" aria-controls="main_nav" aria-expanded="true" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+           <!---===============================================-->
+      <div class="collapse navbar-collapse justify-content-center " id="main_nav_phone">
+       
+         
+            <!-- <a href="{%url 'home-page' %}" class="nav-link active"><i class="uil uil-estate"></i> Home</a> -->
+        
+            {% for cat in postcategory %}
+        
+
+                  
+                    <div class="row g-1 mt-4 mb-4">
+                      {% for scat in cat.subcategory.all %}
+                      <div class="col" >
+                        <a href="{{scat.get_absolute_url}}" class="text-decoration-none text-white">
+                          <div class="text-center ">
+                            <h3><i class="{{scat.icon}}"></i></h3>
+                            <h6>{{scat.sub_name}}</h6>
+                            
+                          </div>
+                        </a>
+                      </div>
+                      {%endfor%}
+                    </div>
+                
+
+
+     
+            {%endfor%} 
+  
+    </div> <!-- navbar-collapse.// -->
+
+
+    <!----------------------- FOR MOBILE=====================-->
+
+
+    <!--==========================================================-->
+
+
+  </div> <!--.container-->
+</nav>
 
        
       <!--=============================================-->

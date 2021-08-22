@@ -205,10 +205,10 @@
 
     <!--===============BREAKING NEWS ===============-->
 
-    <div id="trend" >
-        <div class="container mt-2">
+    <div id="trend"  >
+        <div class="container">
            <div class="row">
-            <div class="col-md-9 col-12 ">
+            <div class="col-md-9 col-12 mt-2">
                 <span class="text-dark">
                     <!-- <i class="uil uil-user-plus"></i> -->
                     {% if request.user.is_authenticated%}
@@ -228,7 +228,7 @@
      
             </div>
 
-            <div class="col-md-3 col-12">
+            <div class="col-md-3 col-12 mt-2">
                 <form action="{% url 'search' %}" method="GET"  id="searchBtn" class="d-flex" style="border: 1px solid rgb(0, 73, 107); border-radius: 5px; height: 28px;">
                     <input id="search" class="form-control " type="text" placeholder="Search" style="border: none;" name="fsearch">
                     <button class="btn " type="submit" style="padding: 0 2px 0 0;">

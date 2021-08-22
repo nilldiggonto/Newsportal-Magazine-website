@@ -113,25 +113,40 @@ def homepage(request):
 
 ########### CATEGORY PAGE
 def category_page(request,slug):
+    lang= 'english'
     obj = get_object_or_404(PostSubCategory, slug=slug)
-    postcategory = PostCategory.objects.all()
+    postcategory = PostCategory.objects.filter(bangla=False)
     template_name = 'pages/category.html'
-    all_cat = PostSubCategory.objects.filter(category=obj.category)
+    all_cat = PostSubCategory.objects.filter(category=obj.category,bangla=False)
     # print(all_cat)
+    if obj.bangla:
+        lang = 'bangla'
+        postcategory = PostCategory.objects.filter(bangla=True)
+
+        all_cat = PostSubCategory.objects.filter(category=obj.category,bangla=True)
+
     context = {
         "obj":obj,
         'postcategory':postcategory,
-        'all_cat':all_cat
+        'all_cat':all_cat,
+        'lang':lang
     }
     return render(request,template_name,context)
 
 ############## SINGLE PAGE
 def single_page(request,slug):
     template_name = 'pages/single_page.html'
+    lang= 'english'
 
-    postcategory = PostCategory.objects.all()
+    postcategory = PostCategory.objects.filter(bangla=False)
     obj = get_object_or_404(Post, slug=slug)
     related_post = Post.objects.filter(slug=slug)
+
+    if obj.bangla:
+        lang = 'bangla'
+        postcategory = PostCategory.objects.filter(bangla=True)
+
+        # all_cat = PostSubCategory.objects.filter(category=obj.category,bangla=True)
 
     # if obj:
     if obj:
@@ -148,7 +163,8 @@ def single_page(request,slug):
        
         'postcategory':postcategory,
         'obj':obj,
-        'all_cat':all_cat
+        'all_cat':all_cat,
+        'lang':lang
         
     }
     return render(request,template_name,context=context)

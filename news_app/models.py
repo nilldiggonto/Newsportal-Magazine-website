@@ -66,7 +66,7 @@ class Post(models.Model):
     title               =   models.CharField(max_length=200)
     intro_image         =   models.ImageField(upload_to='content/',null=True,blank=True)
     intro_link          =   models.URLField(null=True,blank=True)
-    slug                =   models.SlugField(max_length=300,unique=True,null=True,blank=True)
+    slug                =   models.SlugField(max_length=300,unique=True,null=True,blank=True,allow_unicode=True)
 
 
     intro               =   models.TextField(null=True,blank=True)
@@ -89,6 +89,10 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    # def save(self, *args, **kwargs):                                  # add this
+    #     self.slug = slugify(self.title, allow_unicode=True)           # add this
+    #     super().save(*args, **kwargs)  
 
     def save(self, **kwargs):
         slug_str = str(self.title)

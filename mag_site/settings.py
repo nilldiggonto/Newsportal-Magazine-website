@@ -75,6 +75,8 @@ TEMPLATES = [
     },
 ]
 
+
+ALLOW_UNICODE_SLUGS = True
 WSGI_APPLICATION = 'mag_site.wsgi.application'
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

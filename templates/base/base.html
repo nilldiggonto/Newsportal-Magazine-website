@@ -12,10 +12,10 @@
    <meta property="og:image:width" content="200" />
    <meta property="og:image:height" content="200" /> 
 
-   <link rel="shortcut icon" href="https://static.thenounproject.com/png/2921970-200.png" type="image/x-icon">
+   <link rel="shortcut icon" href="https://proofmart.com/wp-content/uploads/2021/06/543-3.png" type="image/x-icon">
 
 
-    <title>no name {%block title%} {%endblock title%}</title>
+    <title>TheNewsCarrier{%block title%} {%endblock title%}</title>
 
     <!--===========================================-->
     <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.css">
@@ -207,13 +207,13 @@
                 <span class="text-dark">
                     <!-- <i class="uil uil-user-plus"></i> -->
                     {% if request.user.is_authenticated%}
-                <a href="{% url 'dashboard-home' %}"> <i class="uil uil-dashboard"></i>dashboard</a> |
-                <a href="{% url 'auth-logout' %}" > <i class="uil uil-unlock"></i>logout</a>
+                <a href="{% url 'dashboard-home' %}"> <i class="uil uil-dashboard"></i>Dashboard</a> |
+                <a href="{% url 'auth-logout' %}" > <i class="uil uil-unlock"></i>Logout</a>
 
                 <!-- <a href="{% url 'auth-register' %}"> <i class="uil uil-user-plus"></i>register</a>  -->
                 {% else%}
-                <a href="{% url 'auth-register' %}"> <i class="uil uil-user-plus"></i>register</a> |
-                <a href="{% url 'auth-login' %}" > <i class="uil uil-unlock"></i>login</a>
+                <a href="{% url 'auth-register' %}"> <i class="uil uil-user-plus"></i>Register</a> |
+                <a href="{% url 'auth-login' %}" > <i class="uil uil-unlock"></i>Login</a>
                     {%endif%}
 
                    | <a href="/?lang=bangla" class="border bg-two p-1 text-white" >BN</a>
@@ -223,7 +223,7 @@
      
             </div>
 
-            <div class="col-md-3 col-12 mt-2">
+            <div class="col-md-3 col-xs-12 mt-2">
                 <form action="{% url 'search' %}" method="GET"  id="searchBtn" class="d-flex" style="border: 1px solid rgb(0, 73, 107); border-radius: 5px; height: 28px;">
                     <input id="search" class="form-control " type="text" placeholder="Search" style="border: none;" name="fsearch">
                     <button class="btn " type="submit" style="padding: 0 2px 0 0;">

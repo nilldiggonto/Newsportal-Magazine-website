@@ -5,12 +5,16 @@
 
 <div class="container">
     <div class="mt-5 p-3 text-center">
-        <h4>Welcome to The News Carrier Portal</h4>
+        <h4>Welcome to 
+          <a href="{%url 'home-page' %}"><span class="text-primary"><b>The News<sup><i class="uil uil-tornado"></i></sup></b></span>Carrier</a>
+          Portal</h4>
     </div>
 
     <div class="row g-1">
         <div class="col-md-8">
+          
             <h6 class="p-2  bg-four text-white">Your Posts</h6>
+            {% if posts %}
             <div class="table-responsive">
               <table class="table table-bordered" id="myTable">
                 <thead>
@@ -53,10 +57,17 @@
                 <a href="#" class="btn btn-outline-info btn-sm" style="width: 20%;">See All</a>
               </div>
               {%endif%}
+
+              {% else %}
+
+              <div class="text-center">
+                <h4>NO POSTS YET</h4>
+              </div>
+              {% endif %}
         </div> <!--col-md-8-->
         <div class="col-md-4">
             <h6 class="p-2  bg-dark text-white">Most Viewd Post</h6>
-
+          {% if most_view %}
             <div class="row g-1">
               {% for m in most_view%}
               {% if m.view_count > 0 and forloop.counter < 5 %}
@@ -94,6 +105,11 @@
                 
                 <!-- <hr> -->
             </div>
+            {% else %}
+            <div class="text-center">
+              <p class="lead">No Data</p>
+            </div>
+            {%endif %}
 
         </div>
     </div> <!--row-->
@@ -102,11 +118,12 @@
     <div class="row mt-4 g-1">
         <div class="col-md-6">
             <h5 class="p-2 text-center bg-dark text-white">Recent comments</h5>
-
+            {% if comments %}
             <div class="card">
                 <div class="card-body">
 
                   {%for com in comments %}
+                  {% if forloop.counter < 10 %}
                     <figure>
                         <blockquote class="blockquote "  style="font-size: medium;">
                           <p class="mb-0">{{com.oponion}}</p>
@@ -117,6 +134,7 @@
                           <a href="{{com.post.get_absolute_url}}">{{com.post.title}}</a>
                         </figcaption>
                       </figure>
+                      {% endif %}
                     {% endfor%}
                       <hr>
 
@@ -124,24 +142,34 @@
 
                 </div>
             </div>
+            {% else %}
+            <div class="text-center">
+              <p>No comments yet</p>
+            </div>
+            {% endif %}
         </div> <!--col-6-->
 
         <div class="col-md-6">
             <h5 class="p-2 text-center bg-dark text-white">Pending Post</h5>
 
             <div class="row g-1">
-                <div class="col">
+              {% for p in pending_posts %}
+                {% if forloop.counter < 10 %}
+                
+                <div class="col-12">
                     <div class="card-body d-flex">
-                        <img style="width:100px; height:100px; object-fit: contain;" src="https://i.pinimg.com/originals/f1/76/f2/f176f22c6f5ebfdb9c8d8c2a075af5a5.jpg" alt="">
-                        <span class="ms-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, ipsum!
+                        <img style="width:100px; height:100px; object-fit: contain;" src="{{p.intro_image.url}}" alt="">
+                        <span class="ms-2">{{p.intro | truncatechars:100}}
                             <br>
-                            Created at
+                            {{p.created_at | timesince }}
                             <br>
-                            category
+                            {{p.scategory}}
                         </span>
                         
                     </div>
                 </div>
+                {% endif %}
+                {% endfor %}
             </div>
 
         </div>

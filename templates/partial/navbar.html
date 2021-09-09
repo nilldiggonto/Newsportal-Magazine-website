@@ -7,7 +7,7 @@
           
             <div class="row ">
            
-                <div class="col-12 mt-4 mb-2 text-center">
+                <div class="col-md-12 col-xs-12 mt-4 mb-2 text-center">
                     <h4><a href="{%url 'home-page' %}"><span class="text-primary"><b>The News<sup><i class="uil uil-tornado"></i></sup></b></span>Carrier</a></h4>
                 </div>
                
@@ -84,7 +84,7 @@
                   
                     <div class="row g-1 mt-4 mb-4">
                       {% for scat in cat.subcategory.all %}
-                      <div class="col" >
+                      <div class="col-2" >
                         <a href="{{scat.get_absolute_url}}" class="text-decoration-none text-white">
                           <div class="text-center ">
                             <h3><i class="{{scat.icon}}"></i></h3>

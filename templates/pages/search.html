@@ -20,6 +20,36 @@
         <h4>You searched for: {{search}}</h4>
     </div>
 
+
+    <div class="row">
+
+        {% for obj in qs %}
+        
+        <div data-aos="fade-down-left" class="col-12 mb-2 " >
+            <div class="card border-0">
+                <a href="{{obj.get_absolute_url}}" class="text-decoration-none text-dark">
+                    <div class="card-body d-flex">
+                    <div >
+                        <img style="width: 150px; height: 100px; object-fit: cover;" src="{{obj.intro_image.url}}" alt="{{obj.title}}">
+                    </div>
+
+                    <div style="margin-left: 10px;">
+                        <p>{{obj.title}}</p>
+                        <div class="">
+                            <p>
+                                {{obj.intro | truncatechars:100}}
+                            </p>
+                            <span class="text-info">Read more<i class="uil uil-arrow-right"></i></span>
+                        </div>
+                        
+                    </div>
+                    </div>
+                </a>
+            </div>
+     </div>
+     {% endfor %}
+    </div>
+
 </div>
 {%endblock content%}
 

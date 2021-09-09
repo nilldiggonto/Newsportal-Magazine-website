@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>No name {%block title%} {%endblock title%}</title>
+    <title>The News Carrier {%block title%} {%endblock title%}</title>
 
     <!--===========================================-->
     <link rel="stylesheet" href="https://bootswatch.com/5/sandstone/bootstrap.css">
@@ -14,7 +14,9 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="shortcut icon" href="https://static.thenounproject.com/png/2921970-200.png" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="https://static.thenounproject.com/png/2921970-200.png" type="image/x-icon">
+     -->
+     <link rel="shortcut icon" href="https://proofmart.com/wp-content/uploads/2021/06/543-3.png" type="image/x-icon">
 
     <!-- <link rel="stylesheet" href="<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css".css"> -->
     <!--===========================================-->
@@ -25,10 +27,14 @@
     <!-- <link rel="stylesheet" href="{% static 'style.css' "> -->
 
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&display=swap');
+      /* @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&display=swap');
+       */
+       @import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
 
       body{
-        font-family: 'Encode Sans SC', sans-serif;
+        /* font-family: 'Encode Sans SC', sans-serif;
+         */
+         font-family: 'Crete Round', serifsd;
       }
         .bg-one{
             background-color: rgb(36, 110, 145);
@@ -61,7 +67,9 @@
     <div class="container-fluid mt-2">
         <div>
             <h4>
-                <a href="{%url 'home-page' %}" class="text-dark">ObscureClub</a>
+                <a href="{%url 'home-page' %}" class="text-dark">
+                    <span class="text-primary"><b>The News<sup><i class="uil uil-tornado"></i></sup></b></span>Carrier
+                </a>
             </h4>
         </div>
     </div>

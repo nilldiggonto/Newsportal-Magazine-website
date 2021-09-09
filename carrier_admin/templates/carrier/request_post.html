@@ -7,14 +7,9 @@
     <div class="mt-5 p-2 text-center">
         All Requested Post
     </div>
-    <nav aria-label="breadcrumb" >
-        <ol class="breadcrumb bg-four p-1">
-          <li class="breadcrumb-item"><a href="#" class="text-light">Home</a></li>
-          <li class="breadcrumb-item active text-light" aria-current="page">Library</li>
-        </ol>
-      </nav>
+  
 
-
+        {% if posts %}
       <div class="row mt-2">
           {% for post in posts %}
           <div class="col-md-12">
@@ -30,9 +25,13 @@
                         <p>By {{post.author}} | {{post.created_at | timesince}} ago</p>
                     </div>
                     <div>
-                        <a href="">view</a>
-                        <a href="">Approved</a>
-                        <a href="">Reject</a>
+                        <a href="#"
+                         data-bs-toggle="modal" data-bs-target="#exampleModal-{{post.id}}"
+                        ><i class="uil uil-eye"></i> view</a> |
+                        <a href="#"
+                        data-bs-toggle="modal" data-bs-target="#exampleApproved-{{post.id}}"
+                        ><i class="uil uil-check-circle"></i> Approved</a> |
+                        <a href="#"><i class="uil uil-trash-alt"></i> Reject</a>
                         <!-- <a href=""></a> -->
                     </div>
                   </div>
@@ -41,8 +40,85 @@
                   </div> -->
               </div>
           </div>
+
+
+          <!--approved-->
+          
+
+          <div class="modal fade" id="exampleApproved-{{post.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <a href="{% url 'dashboard-approved-post' slug=post.slug %}" class="btn btn-sm btn-success">confirm</a>
+                    </div>
+                    <!-- <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div> -->
+                  </div>
+                </div>
+          
+            </div>
+          <!--===============-->
+
+
+
+
+
+          <div class="modal fade" id="exampleModal-{{post.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+            
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">{{post.title}}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+
+
+                    <h4><b>{{post.title}}</b></h4>
+                    <span<i class="uil uil-edit"></i>written by:{{post.author.first_name}} {{obj.author.last_name}} |
+                    <i class="uil uil-calendar-alt"></i> {{post.created_at|date:"d M" }} | 
+                    <i class="uil uil-eye"></i>views: {{post.view_count}} | 
+                    <i class="uil uil-comments-alt"></i>comments:0</span>
+
+                    <div class="mt-2 mb-4">
+                    
+                        <img src="{{post.intro_image.url}}" style="width:100%; height: 300px; object-fit: cover;" alt="">
+
+                        <div class="mt-2">
+                            <span> <b>Introduction:</b></span>
+                            {{post.intro}}
+                        </div>
+
+                        <div>
+                            {{post.summary_one|safe }}
+                        </div>
+                    </div>
+
+                  </div>
+                  <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div> -->
+                </div>
+              </div>
+        
+          </div>
           {% endfor%}
       </div>
+
+      {% else %}
+
+      <div class="text-center">
+          <p class="lead">No posts yet</p>
+      </div>
+
+      {% endif %}
     
 </div>
   

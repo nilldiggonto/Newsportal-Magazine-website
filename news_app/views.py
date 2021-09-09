@@ -156,15 +156,16 @@ def single_page(request,slug):
 
     all_cat = PostSubCategory.objects.filter(category=obj.scategory.category)
 
-
-
+    comment_count = obj.comment.all().count()
+    # print(comment_count)
     # print(slug)
     context = {
        
         'postcategory':postcategory,
         'obj':obj,
         'all_cat':all_cat,
-        'lang':lang
+        'lang':lang,
+        'comment_count':comment_count,
         
     }
     return render(request,template_name,context=context)
@@ -244,7 +245,7 @@ def searchView(request):
     template_name = 'pages/search.html'
     if request.method == 'GET':
         search = request.GET.get('fsearch')
-        print(search)
+        # print(search)
         qs = ''
         if search:
             qs = Post.objects.filter(Q(title__icontains=search) | Q(intro__icontains=search) | Q(summary_one__icontains=search))

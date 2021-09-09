@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>lalala</title>
+    <title>newscarrier Dashboard</title>
+    <link rel="shortcut icon" href="https://proofmart.com/wp-content/uploads/2021/06/543-3.png" type="image/x-icon">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+
+
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Encode+Sans+SC:wght@100&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Crete+Round&display=swap');
@@ -84,7 +87,7 @@
         Button with data-bs-target
       </button> -->
       
-      <div class="offcanvas offcanvas-start" style="width: 300px;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas offcanvas-start" style="width: 400px;" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
           <h5 class="offcanvas-title" id="offcanvasExampleLabel">
             <a class="text-dark" href="{% url 'home-page' %}">
@@ -132,8 +135,11 @@
             <!-- <a href="#"></a> -->
             <a style="border: none;" href="{% url 'dashboard-post-create' %}" class="p-2 mb-2 list-group-item list-group-item-action ">
               <i class="uil uil-plus-square"></i> Create Post</a>
+
+              {% if request.user.is_staff %}
             <a style="border: none;" href="{%url 'dashboard-request-post' %}" class="p-2 mb-2 list-group-item list-group-item-action ">
               <i class="uil uil-mailbox"></i> Post Request</a>
+              {% endif %}
             <!-- <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a>
             <a style="border: none;" href="#" class="p-2 mb-2 list-group-item list-group-item-action ">Cras justo odio</a> -->
 

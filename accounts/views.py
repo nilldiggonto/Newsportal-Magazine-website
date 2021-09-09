@@ -77,11 +77,14 @@ def activate(request, uidb64, token):
         user.save()
         login(request, user)
         # return redirect('home')
-        if 'vmsg' in request.session:
-            del request.session['bar']
-        return redirect('dashboard-home')
+        try:
+            if 'vmsg' in request.session:
+                del request.session['bar']
+        except:
+            pass
+        return redirect('auth-login')
     else:
-        return HttpResponse('Activation link is invalid!')
+        return redirect('auth-login')
 
 
 

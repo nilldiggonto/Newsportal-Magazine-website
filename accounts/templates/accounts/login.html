@@ -6,17 +6,21 @@
 <div class="container border p-4 bg-three text-white" style="margin-top:8%; border-radius:15px">
 
     <div class="row g-3">
-        <div class="col-md-6 d-none d-md-block" style="margin-top:10% ;" >
+        <div class="col-md-6 d-none d-md-block" style="margin-top:15% ;" >
 
             <div class="text-center ">
-                <h3><i class="uil uil-tornado"></i></h3>
-                <h4>NO Club</h4>
-                <p class="lead">Welcome</p>
+                <!-- <h3><i class="uil uil-tornado"></i></h3> -->
+                <h4>
+                    <a href="{%url 'home-page' %}"><span class="text-white"><b>The News<sup><i class="uil uil-tornado"></i></sup></b></span>Carrier</a>
+                </h4>
+                <!-- <p class="lead">Welcome</p> -->
             </div>
 
         </div>
         <div class="col-md-6 align-middle border-start" >
-            <h3 class="text-center">NO <sup><i class="uil uil-tornado"></i></sup> club</h3>
+            <h3 class="text-center">
+                <a href="{%url 'home-page' %}"><span class="text-white"><b>The News<sup><i class="uil uil-tornado"></i></sup></b></span>Carrier</a>
+            </h3>
             <h4 class="text-center">Login</h4>
 
          {% if request.session.vmsg  %}

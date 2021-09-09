@@ -11,12 +11,14 @@ from news_app.models import PostSubCategory,Post,Comment
 def admin_home(request):
     template_name = 'carrier/carrier_home.html'
     posts = Post.objects.filter(author=request.user)
+    pending_posts = Post.objects.filter(author=request.user,active=False)
     most_view = Post.objects.filter(author=request.user).order_by('-view_count')
     comments = Comment.objects.filter(comment_to=request.user)
     context = {
         'posts':posts,
         'most_view':most_view,
-        'comments':comments
+        'comments':comments,
+        'pending_posts':pending_posts
     }
     return render(request,template_name,context)
 
@@ -53,3 +55,10 @@ def request_post(request):
         'posts':posts,
     }
     return render(request,template_name,context=context)
+
+@staff_member_required
+def approved_post(request,slug):
+    post = Post.objects.get(slug=slug)
+    post.active= True
+    post.save()
+    return redirect('dashboard-request-post')

@@ -1,0 +1,140 @@
+body{
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; 
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.bg-one{
+    background-color: rgb(36, 110, 145);
+}
+
+.bg-two{
+    background-color: #9f1239;
+}
+
+.bg-footer{
+    background-color: #630821;
+}
+
+
+.navbar-toggler:focus{
+    box-shadow: none;
+}
+
+.onoffswitch3-active .onoffswitch3-switch {
+    background: #be084e;
+ 
+}
+
+.onoffswitch3-inner .onoffswitch3-inactive {
+    width: 100px;
+    padding-left: 16px;
+    background-color: #9f1239;
+    color: #FFFFFF;
+    text-align: right;
+    margin-bottom: 4px;
+        }
+
+    .hover-content:hover{
+        border: 1px solid #9f1239;
+        border-radius: 15px;
+        transition: 0.3s;
+    }
+
+    .btn-outline-two{
+        color:#842809;
+        border: 1px solid #9f1239;
+    }
+
+    .btn-outline-two:hover {
+        color: #fff;
+        background-color: #9f1239;
+    }
+
+
+.list-group-item-action:hover, .list-group-item-action:focus {
+z-index: 1;
+color: #ffffff;
+text-decoration: none;
+background-color: #9f1239;
+transition: 0.3s;
+}
+
+
+.img-hover-zoom {
+height: 200px; /* [1.1] Set it as per your need */
+overflow: hidden; /* [1.2] Hide the overflowing of child elements */
+}
+
+/* [2] Transition property for smooth transformation of images */
+.img-hover-zoom img {
+transition: transform .5s ease;
+}
+
+/* [3] Finally, transforming the image when container gets hovered */
+.img-hover-zoom:hover img {
+transform: scale(1.5);
+}
+
+
+
+
+
+/* .navbar-nav .dropdown-menu {
+    position: static !important;
+} */
+
+        #mySidenavtwo span {
+        position: fixed;
+        /* left: -20%; */
+        /* height: 20px; */
+        transition: 0.3s;
+        padding: 5px;
+        width: 45%;
+        text-decoration: none;
+        font-size: 12px;
+        
+        color: rgb(252, 252, 252);
+  
+        z-index: 1111;
+        margin-top: 3px;
+
+        }
+
+        a{
+            text-decoration: none;
+        }
+
+
+        #trend{
+        margin-top: 10%;
+        }
+
+
+        .text-truncate-container {
+            width: 250px;
+        }
+        .text-truncate-container p {
+            -webkit-line-clamp: 3;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .bg-darker{
+            color: #fff;
+            background-color: #3e3f3a;
+            border-color: #3e3f3a;
+        }
+
+        @media all and (max-width: 800px) {
+
+            #trend{
+                margin-top: 30%;
+                }
+
+            }	
+       

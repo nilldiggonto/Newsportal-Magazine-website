@@ -7,6 +7,7 @@ cryptography==3.4.7
 defusedxml==0.7.1
 Django==3.2.5
 django-allauth==0.45.0
+django-otp==1.0.6
 django-social-share==2.2.1
 django-taggit==1.5.1
 django-utils-six==2.0

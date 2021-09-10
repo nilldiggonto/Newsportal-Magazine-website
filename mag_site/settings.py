@@ -26,12 +26,13 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.humanize',
 
-
+    'django_otp',
+    'django_otp.plugins.otp_totp',
     'news_app',
     'rest_framework',
     'accounts',
     'carrier_admin',
-     'django_social_share',
+    # 'django_social_share',
 
     #all auth
 
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     # 'allauth.socialaccount',
 ]
 
-SITE_ID = 2
+# SITE_ID = 2
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -49,6 +50,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django_otp.middleware.OTPMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     

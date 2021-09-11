@@ -98,10 +98,13 @@ def loginView(request):
         username = request.POST.get('username')
         password = request.POST.get('password')
         if User.objects.filter(username=username,is_active=False):
-            a = 'ask antu to verify. will automate later'
+            a = 'Check your email to verify'
 
         # print(username,password)
         user = authenticate(username=username, password=password)
+        if user.is_staff:
+            # a = 'You cant login from here'
+            return redirect('auth-login')
         if user:
             login(request,user)
             return redirect('dashboard-home')

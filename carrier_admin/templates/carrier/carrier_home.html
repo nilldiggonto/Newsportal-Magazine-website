@@ -37,7 +37,7 @@
                     <th scope="row">{{forloop.counter}}</th>
                     <td>{{post.title}}</td>
                     <td><i class="{{post.scategory.icon}}"></i> <br>{{post.scategory}}</td>
-                    <td>5</td>
+                    <td>{{post.comment.all.count}}</td>
                     <td>{{post.view_count}}</td>
                     <td>{{post.created_at | timesince}} ago</td>
                     <td><a href="{{post.get_absolute_url}}" target="_blank"><i class="uil uil-expand-from-corner"></i></a></td>

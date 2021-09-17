@@ -44,6 +44,10 @@
      
 
     </style>
+
+    {%block style %}
+
+    {%endblock style %}
 </head>
 <body>
 
@@ -54,26 +58,26 @@
             <!-- <a href="#">Profile</a>
             <a href="#">Logout</a> -->
             <a  class="text-white me-2"  data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-              <i class="uil uil-align-alt"></i> Dashboard
+              <i class="uil uil-align-alt"></i> Menu Bar
               </a>
 
               <a href="{% url 'dashboard-home' %}" class="text-white me-2">
-                <i class="uil uil-estate"></i> home
+                <i class="uil uil-estate"></i> Dashboard Panel
               </a>
 
         </div>
           <div>
             <a href="{% url 'home-page' %}" class="text-white me-2">
-              <i class="uil uil-estate"></i>
+              <i class="uil uil-estate"></i> thenewzcarrier.com
             </a>
                
-                <a href="#" class="text-white me-2">
+                <!-- <a href="#" class="text-white me-2">
                   <i class="uil uil-envelope"></i>
                 </a>
 
                 <a href="{% url 'auth-logout' %}" class="text-white me-2">
                   <i class="uil uil-sign-out-alt"></i>
-                </a>
+                </a> -->
           </div>
 
          

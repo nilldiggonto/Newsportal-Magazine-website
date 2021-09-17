@@ -1,6 +1,6 @@
 {%extends 'base/base.html'%}
 {% load humanize %}
-{% load social_share %}
+
 {%block style%}
 
 <style>
@@ -143,7 +143,7 @@
 
             <div class="mt-2 mb-4">
             <a href="#" data-bs-toggle="modal" data-bs-target="#singleImg">
-                <img src="{{obj.intro_image.url}}" style="width:100%; height: 300px; object-fit: cover;" alt="">
+                <img src="{{obj.intro_image.url}}" style="width:100%; height: 400px; object-fit: cover; object-position: 0 -1px;" alt="{{obj.title}}">
             </a>
 
             <!--MODAL-->
